@@ -3,24 +3,19 @@
     <head>
         <title>classtable</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script type="text/javascript">
-            $(#but).on(click,function(){
-
-            })
-        </script>
+        
         <style>
             body{
                 overflow-x:hidden;
-                overflow-y:hidden;
             }
             html{
-                background-color: #FFF2F2;
+                background-color: #fff8dc;
             }
             #left{
-                position:absolute;
+                position:fixed;
                 top:-20px;
                 left:0px;
-                background-color:#FFBFBF;
+                background-color:#cd853f;
                 height:150%;
                 width:4%
 
@@ -29,30 +24,56 @@
                 position:absolute;
                 top:0px;
                 left:750px;
-                width: 500px;
+                width: 250px;
                 height: 1000px;
                 text-align:center;
             }
             .slide{
                 position: relative;;
-                top:50px;
                 left:50px;
-                background-color:#FFBFBF;
-                height:200px;
-                width:400px;
+                background-color:#deb887;
+                height:80px;
+                width:200px;
                 border-radius:10px;
-                
+            }
+            .slide1{
+                top:50px; 
+            }
+            .slide2{
+                top:80px;
+            }
+            .slide3{
+                top:110px;
+            }
+            .slide4{
+                top:140px;
+            }
+            .slide5{
+                top:170px;
+            }
+            .slide6{
+                top:200px;
             }
             .sle{
                 position: absolute;
                 
-                top:40%;
-                left:40%;
+                top:30%;
+                left:25%;
                 width:100px; 
                 height:40px;
                 line-height: 55px;
                 font-size: 1.5rem;
                
+            }
+            .slec{
+                position: absolute;
+                
+                top:20%;
+                left:25%;
+                width:100px; 
+                height:40px;
+                line-height: 55px;
+                font-size: 1.5rem;
             }
             #but{
                 position: relative;
@@ -93,22 +114,49 @@
             table{
                 position:absolute;
                 top:50px;
-                left:90px;
-                width:40%;
+                left:100px;
+                width:43%;
                 font-size:16px; 
                 text-align:center;
                 border-collapse:collapse;
                 
             }
             td.t{
-                background-color:#FFFFDE		
+                background-color:#FFFFDE;
+                height:45px;
             }
-            td{
-                height:35px;
-            }
+            
             .group{
-                background-color:#E0E0FF
+                background-color:#d2b48c
             }
+            .main{
+                position:absolute;
+                top:50px;
+                left:1050px;
+                width: 450px;
+                height: 800px;
+                background-color: 	#e0ffff;
+               
+            }
+            .grade{
+                position:relative;
+                left:25px;
+                background-color: #00bfff;
+                width:400px;
+                height:30px;
+                text-align:center;
+                line-height:30px;
+            }
+            .classlist{
+                position:relative;
+                left:1068px;
+                width:400px;
+                font-size:16px; 
+                text-align:center;
+                border-collapse:collapse;
+                border-color: #00bfff;
+            }
+            
         </style>
     </head>
     <body>
@@ -122,8 +170,8 @@
         <div id='con'>
             <p id='year'>年份:</p>
             <table border=1>
-                <colgroup class='group'></colgroup>
-                <colgroup class='group'></colgroup>
+                <colgroup class='group' width='5%'></colgroup>
+                <colgroup class='group' width='15%'></colgroup>
                 <thead>
                     <tr class='group'><td>節次</td><td>時間</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td>六</td><td>日</td></tr>
                 </thead>
@@ -148,18 +196,112 @@
                 </tbody>
     
         <div id='block'>
-            <p class='slide'>
+            <p class='slide1 slide'>
+                <a href='#' class='slec'>本系</a>
+            </p>
+            <p class='slide2 slide'>
                 <select class='sle'>
-                    <option selected>本系</option>
+                    
                     <option>輔系</option>
                     <option>雙主修</option>
                     <option>學程</option>
                 </select>
+              
             </p>
-            <p>
-                <button id='but'><img id='plus' src='pluss.png'></button>
+            <p class='slide3 slide'>
+                <select class='sle'>
+                    
+                    <option>輔系</option>
+                    <option>雙主修</option>
+                    <option>學程</option>
+                </select>
+              
+            </p>
+            <p class='slide4 slide'>
+                <a href="#" class='slec'>二外</a>
+            </p>
+            <p class='slide5 slide'>
+                <a href="#" class='slec'>體育通識</a>
+              
+            </p>
+            <p class='slide6 slide'>
+                <a href="#" class='slec'>系外</a>
             </p>
         </div>
-       
+        <div class='main'>
+            <div class='grade'>
+                <p>年級:<input type='text' name='grade' size='1'></p>
+            </div>
+            <div>
+                <table  border='1' class='classlist mainsubject'>
+                    <thead>
+                        <tr><td colspan='3'>本系</td></tr>
+                        <tr><td>科目</td><td>時間</td><td>加入</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>math</td><td>[一]1-2</td><td><input type='checkbox'></td></tr>
+                    </tbody>
+                </table>    
+            </div>
+            <div>
+                <table  border='1' class='classlist general'>
+                    <thead>
+                        <tr><td colspan='3'>通識體育</td></tr>
+                        <tr><td>科目</td><td>時間</td><td>加入</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>math</td><td>[一]1-2</td><td><input type='checkbox'></td></tr>
+                    </tbody>
+                </table>    
+            </div>
+            <div>
+                <table  border='1' class='classlist secondlng'>
+                    <thead>
+                        <tr><td colspan='3'>二外</td></tr>
+                        <tr><td>科目</td><td>時間</td><td>加入</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>math</td><td>[一]1-2</td><td><input type='checkbox'></td></tr>
+                    </tbody>
+                </table>    
+            </div>
+            <div>
+                <table  border='1' class='classlist otherdpt'>
+                    <thead>
+                        <tr><td colspan='3'>外系選修</td></tr>
+                        <tr><td>科目</td><td>時間</td><td>加入</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>math</td><td>[一]1-2</td><td><input type='checkbox'></td></tr>
+                    </tbody>
+                </table>    
+            </div>
+               
+        </div>
+        <script type="text/javascript">
+            $(function(){
+             $('.main').hide();
+             $('.classlist').hide();
+             $('.slide1').on('click',function(){
+                $('.main').show();
+                $('.mainsubject').show();
+             })
+             $('.slide4').on('click',function(){
+                $('.main').show();
+                $('.secondlng').show();
+             })
+             $('.slide5').on('click',function(){
+                $('.main').show();
+                $('.general').show();
+             })
+             $('.slide6').on('click',function(){
+                $('.main').show();
+                $('.otherdpt').show();
+             })
+             
+                        
+             })
+            
+         </script>
     </body>
 </html>
