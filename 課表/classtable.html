@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>classtable</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(#but).on(click,function(){
+
+            })
+        </script>
+        <style>
+            body{
+                overflow-x:hidden;
+                overflow-y:hidden;
+            }
+            html{
+                background-color: #FFF2F2;
+            }
+            #left{
+                position:absolute;
+                top:-20px;
+                left:0px;
+                background-color:#FFBFBF;
+                height:150%;
+                width:4%
+
+            }
+            #block{
+                position:absolute;
+                top:0px;
+                left:750px;
+                width: 500px;
+                height: 1000px;
+                text-align:center;
+            }
+            .slide{
+                position: relative;;
+                top:50px;
+                left:50px;
+                background-color:#FFBFBF;
+                height:200px;
+                width:400px;
+                border-radius:10px;
+                
+            }
+            .sle{
+                position: absolute;
+                
+                top:40%;
+                left:40%;
+                width:100px; 
+                height:40px;
+                line-height: 55px;
+                font-size: 1.5rem;
+               
+            }
+            #but{
+                position: relative;
+                top:100px;
+                
+            }
+            #plus{
+                width: 50px;
+                height:50px;
+
+            }
+            #setting{
+                position:absolute;
+                left:-28px;
+                top:70px;
+                widows: 60px;
+                height:60px;
+            }
+            #head{
+                position:absolute;
+                left:-28px;
+                top:20px;
+                widows: 60px;
+                height:60px;
+            }
+            #home{
+                position:absolute;
+                left:-28px;
+                top:700px;
+                widows: 60px;
+                height:60px;
+            }
+            #year{
+                position:relative;
+                top:10px;
+                left:90px;
+            }
+            table{
+                position:absolute;
+                top:50px;
+                left:90px;
+                width:40%;
+                font-size:16px; 
+                text-align:center;
+                border-collapse:collapse;
+                
+            }
+            td.t{
+                background-color:#FFFFDE		
+            }
+            td{
+                height:35px;
+            }
+            .group{
+                background-color:#E0E0FF
+            }
+        </style>
+    </head>
+    <body>
+        <div id='left'>
+           <p><a href="#"><img id='head' src='Untitled-removebg-preview.png'></a></p>
+           <p><a href="#"><img id='setting' src='Untitled-removebg-preview.png'></a></p>
+           <p><a href="#"><img id='home' src='Untitled-removebg-preview.png'></a></p>
+           
+        </div>
+       
+        <div id='con'>
+            <p id='year'>年份:</p>
+            <table border=1>
+                <colgroup class='group'></colgroup>
+                <colgroup class='group'></colgroup>
+                <thead>
+                    <tr class='group'><td>節次</td><td>時間</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td>六</td><td>日</td></tr>
+                </thead>
+                <tbody>
+                
+                <tr><td>0</td><td>07:10-08:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>1</td><td>08:10-09:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>2</td><td>09:10-10:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>3</td><td>10:10-11:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>4</td><td>11:10-12:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>N</td><td>12:00-13:00</td><td colspan='7' class='t'></td>
+                <tr><td>5</td><td>13:00-14:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>6</td><td>14:10-15:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>7</td><td>15:10-16:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>8</td><td>16:10-17:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>9</td><td>17:10-18:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>A</td><td>18:10-19:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>B</td><td>19:10-20:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>C</td><td>20:10-21:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>D</td><td>21:10-22:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>E</td><td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                </tbody>
+    
+        <div id='block'>
+            <p class='slide'>
+                <select class='sle'>
+                    <option selected>本系</option>
+                    <option>輔系</option>
+                    <option>雙主修</option>
+                    <option>學程</option>
+                </select>
+            </p>
+            <p>
+                <button id='but'><img id='plus' src='pluss.png'></button>
+            </p>
+        </div>
+       
+    </body>
+</html>
