@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>classtable</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script> 
+        <style>
+            body{
+                overflow-x:hidden;
+            }
+            html{
+                background-color: #fff8dc;
+            }
+            #left{
+                position:fixed;
+                top:-20px;
+                left:0px;
+                background-color:#cd853f;
+                height:150%;
+                width:4%
+
+            }
+            #block{
+                position:absolute;
+                top:0px;
+                left:750px;
+                width: 250px;
+                height: 1000px;
+                text-align:center;
+            }
+            .slide{
+                position: relative;;
+                left:50px;
+                background-color:#deb887;
+                height:80px;
+                width:200px;
+                border-radius:10px;
+            }
+            .slide1{
+                top:50px; 
+            }
+            .slide2{
+                top:80px;
+            }
+            .slide3{
+                top:110px;
+            }
+            .slide4{
+                top:140px;
+            }
+            .slide5{
+                top:170px;
+            }
+            .slide6{
+                top:200px;
+            }
+            .sle{
+                position: absolute;
+                
+                top:30%;
+                left:25%;
+                width:100px; 
+                height:40px;
+                line-height: 55px;
+                font-size: 1.5rem;
+               
+            }
+            .slec{
+                position: absolute;
+                
+                top:20%;
+                left:25%;
+                width:100px; 
+                height:40px;
+                line-height: 55px;
+                font-size: 1.5rem;
+            }
+            #but{
+                position: relative;
+                top:100px;
+                
+            }
+            #plus{
+                width: 50px;
+                height:50px;
+
+            }
+            #setting{
+                position:absolute;
+                left:-28px;
+                top:70px;
+                widows: 60px;
+                height:60px;
+            }
+            #head{
+                position:absolute;
+                left:-28px;
+                top:20px;
+                widows: 60px;
+                height:60px;
+            }
+            #home{
+                position:absolute;
+                left:-28px;
+                top:700px;
+                widows: 60px;
+                height:60px;
+            }
+            #year{
+                position:relative;
+                top:10px;
+                left:90px;
+            }
+            table{
+                position:absolute;
+                top:50px;
+                left:100px;
+                width:43%;
+                font-size:16px; 
+                text-align:center;
+                border-collapse:collapse;
+                
+            }
+            td.t{
+                background-color:#FFFFDE;
+                height:45px;
+            }
+            
+            .group{
+                background-color:#d2b48c
+            }
+            .main{
+                position:absolute;
+                top:50px;
+                left:1050px;
+                width: 450px;
+                height: 800px;
+                background-color: 	#e0ffff;
+               
+            }
+            .grade{
+                position:relative;
+                left:25px;
+                background-color: #00bfff;
+                width:400px;
+                height:30px;
+                text-align:center;
+                line-height:30px;
+            }
+            .classlist{
+                position:relative;
+                left:1068px;
+                width:400px;
+                font-size:16px; 
+                text-align:center;
+                border-collapse:collapse;
+                border-color: #00bfff;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id='left'>
+           <p><a href="#"><img id='head' src='Untitled-removebg-preview.png'></a></p>
+           <p><a href="#"><img id='setting' src='Untitled-removebg-preview.png'></a></p>
+           <p><a href="#"><img id='home' src='Untitled-removebg-preview.png'></a></p>
+           
+        </div>
+       
+        <div id='con'>
+            <p id='year'>年份:</p>
+            <table border=1>
+                <colgroup class='group' width='5%'></colgroup>
+                <colgroup class='group' width='15%'></colgroup>
+                <thead>
+                    <tr class='group'><td>節次</td><td>時間</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td>六</td><td>日</td></tr>
+                </thead>
+                <tbody>
+                
+                <tr><td>0</td><td>07:10-08:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>1</td><td>08:10-09:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>2</td><td>09:10-10:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>3</td><td>10:10-11:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>4</td><td>11:10-12:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>N</td><td>12:00-13:00</td><td colspan='7' class='t'></td>
+                <tr><td>5</td><td>13:00-14:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>6</td><td>14:10-15:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>7</td><td>15:10-16:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>8</td><td>16:10-17:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>9</td><td>17:10-18:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>A</td><td>18:10-19:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>B</td><td>19:10-20:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>C</td><td>20:10-21:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>D</td><td>21:10-22:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                <tr><td>E</td><td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
+                </tbody>
+    
+        <div id='block'>
+            <p class='slide1 slide'>
+                <a href='#' class='slec'>本系</a>
+            </p>
+            <p class='slide2 slide'>
+                <select class='sle'>
+                    
+                    <option>輔系</option>
+                    <option>雙主修</option>
+                    <option>學程</option>
+                </select>
+              
+            </p>
+            <p class='slide3 slide'>
+                <select class='sle'>
+                    
+                    <option>輔系</option>
+                    <option>雙主修</option>
+                    <option>學程</option>
+                </select>
+              
+            </p>
+            <p class='slide4 slide'>
+                <a href="#" class='slec'>二外</a>
+            </p>
+            <p class='slide5 slide'>
+                <a href="#" class='slec'>體育通識</a>
+              
+            </p>
+            <p class='slide6 slide'>
+                <a href="#" class='slec'>系外</a>
+            </p>
+        </div>
+        <div class='main'>
+            <div class='grade'>
+                <p>年級:<input type='text' name='grade' size='1'></p>
+            </div>
+            <div>
+                <table  border='1' class='classlist mainsubject'>
+                    <thead>
+                        <tr><td colspan='3'>本系</td></tr>
+                        <tr><td>科目</td><td>時間</td><td>加入</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>math</td><td>[一]1-2</td><td><input type='checkbox'></td></tr>
+                    </tbody>
+                </table>    
+            </div>
+            <div>
+                <table  border='1' class='classlist general'>
+                    <thead>
+                        <tr><td colspan='3'>通識體育</td></tr>
+                        <tr><td>科目</td><td>時間</td><td>加入</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>math</td><td>[一]1-2</td><td><input type='checkbox'></td></tr>
+                    </tbody>
+                </table>    
+            </div>
+            <div>
+                <table  border='1' class='classlist secondlng'>
+                    <thead>
+                        <tr><td colspan='3'>二外</td></tr>
+                        <tr><td>科目</td><td>時間</td><td>加入</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>math</td><td>[一]1-2</td><td><input type='checkbox'></td></tr>
+                    </tbody>
+                </table>    
+            </div>
+            <div>
+                <table  border='1' class='classlist otherdpt'>
+                    <thead>
+                        <tr><td colspan='3'>外系選修</td></tr>
+                        <tr><td>科目</td><td>時間</td><td>加入</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>math</td><td>[一]1-2</td><td><input type='checkbox'></td></tr>
+                    </tbody>
+                </table>    
+            </div>
+               
+        </div>
+        <script type="text/javascript">
+            $(function(){
+             $('.main').hide();
+             $('.classlist').hide();
+             $('.slide1').on('click',function(){
+                $('.main').show();
+                $('.mainsubject').show();
+             })
+             $('.slide4').on('click',function(){
+                $('.main').show();
+                $('.secondlng').show();
+             })
+             $('.slide5').on('click',function(){
+                $('.main').show();
+                $('.general').show();
+             })
+             $('.slide6').on('click',function(){
+                $('.main').show();
+                $('.otherdpt').show();
+             })
+             
+                        
+             })
+            
+         </script>
+    </body>
+</html>
