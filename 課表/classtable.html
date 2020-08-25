@@ -300,79 +300,8 @@
                         <td>日</td></tr>
                 </thead>
                 <tbody>
-                    <tr><td>0</td><td>07:10-08:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    <tr><td>1</td><td>08:10-09:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    <tr><td>2</td><td>09:10-10:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    <tr><td>3</td><td>10:10-11:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    <tr><td>4</td><td>11:10-12:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    <tr><td>N</td><td>12:00-13:00</td>
-                        <td colspan='7' class='t'></td></tr>
-                    <tr><td>5</td><td>13:00-14:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    <tr><td>6</td><td>14:10-15:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    <tr><td>7</td><td>15:10-16:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    <tr><td>8</td><td>16:10-17:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    <tr><td>9</td><td>17:10-18:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    <tr><td>A</td><td>18:10-19:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    <tr><td>B</td><td>19:10-20:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    <tr><td>C</td><td>20:10-21:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    <tr><td>D</td><td>21:10-22:00</td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td><td class='t'></td>
-                        <td class='t'></td></tr>
-                    </td></tr>
+                    <tr v-for="item in tabletime" ><td>{{item.session}}</td><td>{{item.time}}</td><td v-if="item.session ==='N'" colspan="7"></td>
+                    <td v-else v-for="n in 7"></td></tr>
                 </tbody>
             </table>
         </div>
@@ -398,117 +327,33 @@
             
         </div>
     
-        <!--
-        <div id='block'>
-            <p class='slide1 slide'>
-                <a href='#' class='slec'>本系</a>
-            </p>
-            <p class='slide2 slide'>
-                <select class='sle'>
+        
+     <script>
+        table= new Vue({
+            el:"#classtable",
+            data:{
+                tabletime:[
+                    {session:'0',time:"07:10-08:00"},
+                    {session:'1',time:"08:10-09:00"},
+                    {session:'2',time:"09:10-10:00"},
+                    {session:'3',time:"10:10-11:00"},
+                    {session:'4',time:"11:10-12:00"},
+                    {session:'N',time:"12:00-13:00"},
+                    {session:'5',time:"13:00-14:00"},
+                    {session:'6',time:"14:10-15:00"},
+                    {session:'7',time:"15:10-16:00"},
+                    {session:'8',time:"16:10-17:00"},
+                    {session:'9',time:"17:10-18:00"},
+                    {session:'A',time:"18:10-19:00"},
+                    {session:'B',time:"19:10-20:00"},
+                    {session:'C',time:"20:10-21:00"},
+                    {session:'D',time:"21:10-22:00"},
                     
-                    <option>輔系</option>
-                    <option>雙主修</option>
-                    <option>學程</option>
-                </select>
-              
-            </p>
-            <p class='slide3 slide'>
-                <select class='sle'>
-                    
-                    <option>輔系</option>
-                    <option>雙主修</option>
-                    <option>學程</option>
-                </select>
-              
-            </p>
-            <p class='slide4 slide'>
-                <a href="#" class='slec'>二外</a>
-            </p>
-            <p class='slide5 slide'>
-                <a href="#" class='slec'>體育通識</a>
-              
-            </p>
-            <p class='slide6 slide'>
-                <a href="#" class='slec'>系外</a>
-            </p>
-        </div>
-        <div class='main'>
-            <div class='grade'>
-                <p>年級:<input type='text' name='grade' size='1'></p>
-            </div>
-            <div>
-                <table  border='1' class='classlist mainsubject'>
-                    <thead>
-                        <tr><td colspan='3'>本系</td></tr>
-                        <tr><td>科目</td><td>時間</td><td>加入</td></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>math</td><td>[一]1-2</td><td><input type='checkbox'></td></tr>
-                    </tbody>
-                </table>    
-            </div>
-            <div>
-                <table  border='1' class='classlist general'>
-                    <thead>
-                        <tr><td colspan='3'>通識體育</td></tr>
-                        <tr><td>科目</td><td>時間</td><td>加入</td></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>math</td><td>[一]1-2</td><td><input type='checkbox'></td></tr>
-                    </tbody>
-                </table>    
-            </div>
-            <div>
-                <table  border='1' class='classlist secondlng'>
-                    <thead>
-                        <tr><td colspan='3'>二外</td></tr>
-                        <tr><td>科目</td><td>時間</td><td>加入</td></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>math</td><td>[一]1-2</td><td><input type='checkbox'></td></tr>
-                    </tbody>
-                </table>    
-            </div>
-            <div>
-                <table  border='1' class='classlist otherdpt'>
-                    <thead>
-                        <tr><td colspan='3'>外系選修</td></tr>
-                        <tr><td>科目</td><td>時間</td><td>加入</td></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>math</td><td>[一]1-2</td><td><input type='checkbox'></td></tr>
-                    </tbody>
-                </table>    
-            </div>               
-        </div>
-
-        <script type="text/javascript">
-            $(function(){
-             $('.main').hide();
-             $('.classlist').hide();
-             $('.slide1').on('click',function(){
-                $('.main').show();
-                $('.mainsubject').show();
-             })
-             $('.slide4').on('click',function(){
-                $('.main').show();
-                $('.secondlng').show();
-             })
-             $('.slide5').on('click',function(){
-                $('.main').show();
-                $('.general').show();
-             })
-             $('.slide6').on('click',function(){
-                $('.main').show();
-                $('.otherdpt').show();
-             })
-             
-                        
-             })
-            
-         </script>
-     -->
-
+                ]
+                
+            }
+         })
+     </script>
 
     </body>
 </html>
