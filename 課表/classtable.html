@@ -170,11 +170,11 @@
                 border-radius:20px;                
             }
 
-            #classtable{
+            #ctct{
                 position:absolute;
                 top:130px;
                 left:100px;
-                width:80%;
+                width:50%;
                 font-size:15px;
                 color:#363A42; 
                 text-align:center;
@@ -182,21 +182,27 @@
                 font-family:微軟正黑體;              
             }
 
+            td.space{
+                empty-cells:show;
+            }
             td.t{
-                background-color:#FFFFDE;
+                background-color:#FFFFFF;
                 height:45px;
                 border-collapse:collapse;
-
             }
-            td.semester-title{
-                background-color:#d2b48c;
-            }
-
-
             
-            .group{
-                background-color:#d2b48c;
+            td.semester-title{
+                background-color:#363A42;
             }
+            .group{
+                background-color:#D1D2D3;
+            }
+
+            .line1{
+                background-color:#D1D2D3;
+            }
+
+
             .main{
                 position:absolute;
                 top:50px;
@@ -275,8 +281,11 @@
         </div><!--search end -->
 
         <div id='classtable'>
-            <table border=1>
-                <colgroup class='group' width='5%'></colgroup>
+            <table id='ctct' border=1>
+                <colgroup class='group' width='3%'>
+                    <col class='line1'>
+                    <col span='7' class='line2'>
+                </colgroup>
                 <thead>
                     <tr class='semester'>
                         <td colspan='4' class='semester-title'>SEMESTER</td>
@@ -292,7 +301,7 @@
 
                     </tr>
                     <tr class='group'>
-                        <td>節次</td>
+                        <td class='space'></td>
                         <td>一</td><td>二</td>
                         <td>三</td><td>四</td>
                         <td>五</td><td>六</td>
