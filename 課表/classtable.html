@@ -28,43 +28,9 @@
                 height: 1000px;
                 text-align:center;
             }
-            .slide{
-                position: relative;;
-                left:50px;
-                background-color:#deb887;
-                height:80px;
-                width:200px;
-                border-radius:10px;
-            }
-            .slide1{
-                top:50px; 
-            }
-            .slide2{
-                top:80px;
-            }
-            .slide3{
-                top:110px;
-            }
-            .slide4{
-                top:140px;
-            }
-            .slide5{
-                top:170px;
-            }
-            .slide6{
-                top:200px;
-            }
-            .sle{
-                position: absolute;
-                
-                top:30%;
-                left:25%;
-                width:100px; 
-                height:40px;
-                line-height: 55px;
-                font-size: 1.5rem;
-               
-            }
+            
+            
+    
             .slec{
                 position: absolute;
                 
@@ -300,8 +266,8 @@
                         <td>日</td></tr>
                 </thead>
                 <tbody>
-                    <tr v-for="item in tabletime" ><td>{{item.session}}</td><td>{{item.time}}</td><td v-if="item.session ==='N'" colspan="7"></td>
-                    <td v-else v-for="n in 7"></td></tr>
+                    <tr v-for="item in tabletime" ><td>{{item.session}}</td><td>{{item.time}}</td><td class="t" v-if="item.session ==='N'" colspan="7"></td>
+                    <td class="t" v-else v-for="n in 7"></td></tr>
                 </tbody>
             </table>
         </div>
