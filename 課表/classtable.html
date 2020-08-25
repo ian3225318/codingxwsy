@@ -182,9 +182,6 @@
                 font-family:微軟正黑體;              
             }
 
-            tr.group{
-
-            }
             td.t{
                 background-color:#FFFFDE;
                 height:45px;
@@ -192,13 +189,13 @@
 
             }
             td.semester-title{
-
+                background-color:#d2b48c;
             }
 
 
             
             .group{
-                background-color:#d2b48c
+                background-color:#d2b48c;
             }
             .main{
                 position:absolute;
@@ -280,7 +277,6 @@
         <div id='classtable'>
             <table border=1>
                 <colgroup class='group' width='5%'></colgroup>
-                <colgroup class='group' width='15%'></colgroup>
                 <thead>
                     <tr class='semester'>
                         <td colspan='4' class='semester-title'>SEMESTER</td>
@@ -306,10 +302,8 @@
                 <tbody>
                     <tr class='classblock' v-for="item in tabletime" >
                         <td>{{item.session}}</td>
-                        
-                        
                         <td class="t" v-if="item.session ==='N'" colspan="7"></td>
-                        <td class="t" v-else v-for="n in 7"></td>
+                        <td class="t" :class="n+'_'+item.session" v-else v-for="n in week" ></td>
                     </tr>
                 </tbody>
             </table>
@@ -369,13 +363,20 @@
                     {session:'A'},
                     {session:'B'},
                     {session:'C'},
-                    {session:'D'},
-                    
+                    {session:'D'},    
+                ],
+                week:[
+                    '1','2','3','4','5','6','7'
                 ]
+                   
+                
+                   
+                
                 
             }
 
          })
+
 
          list=new Vue({
              el:"#list",
