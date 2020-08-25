@@ -296,7 +296,7 @@
 
                     </tr>
                     <tr class='group'>
-                        <td>節次</td><td>時間</td>
+                        <td>節次</td>
                         <td>一</td><td>二</td>
                         <td>三</td><td>四</td>
                         <td>五</td><td>六</td>
@@ -306,7 +306,7 @@
                 <tbody>
                     <tr class='classblock' v-for="item in tabletime" >
                         <td>{{item.session}}</td>
-                        <td>{{item.time}}</td>
+                        
                         
                         <td class="t" v-if="item.session ==='N'" colspan="7"></td>
                         <td class="t" v-else v-for="n in 7"></td>
@@ -355,21 +355,21 @@
             el:"#classtable",
             data:{
                 tabletime:[
-                    {session:'0',time:"07:10-08:00"},
-                    {session:'1',time:"08:10-09:00"},
-                    {session:'2',time:"09:10-10:00"},
-                    {session:'3',time:"10:10-11:00"},
-                    {session:'4',time:"11:10-12:00"},
-                    {session:'N',time:"12:00-13:00"},
-                    {session:'5',time:"13:00-14:00"},
-                    {session:'6',time:"14:10-15:00"},
-                    {session:'7',time:"15:10-16:00"},
-                    {session:'8',time:"16:10-17:00"},
-                    {session:'9',time:"17:10-18:00"},
-                    {session:'A',time:"18:10-19:00"},
-                    {session:'B',time:"19:10-20:00"},
-                    {session:'C',time:"20:10-21:00"},
-                    {session:'D',time:"21:10-22:00"},
+                    {session:'0'},
+                    {session:'1'},
+                    {session:'2'},
+                    {session:'3'},
+                    {session:'4'},
+                    {session:'N'},
+                    {session:'5'},
+                    {session:'6'},
+                    {session:'7'},
+                    {session:'8'},
+                    {session:'9'},
+                    {session:'A'},
+                    {session:'B'},
+                    {session:'C'},
+                    {session:'D'},
                     
                 ]
                 
