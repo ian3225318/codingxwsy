@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>NCKU MSY</title>
+        <title>NCKU WSY</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://unpkg.com/vue/dist/vue.js"></script> 
         <style>
             body{
                 overflow-x:hidden;
+                background-image:url(images\BG-01.jpg);
+                background-repeat:repeat;
+                background-position:100%;
             }
             html{
-                background-image: url(images\BG-01.jpg);
+                
             }
             #tools{
                 position:fixed;
@@ -100,13 +103,15 @@
                 font-family:Century Gothic,微軟正黑體;
                 font-weight:bold;
                 font-size:25px;
+                color:#363A42;
             }
 
             #keyword-search{
                 position:absolute;
                 top:45px;
                 left:800px;
-                
+                border-radius:10px;
+                border:  #363A42 solid;                
             }
             #bt-search{
                 position:relative;
@@ -184,18 +189,26 @@
                 left:100px;
                 width:42%;
                 font-size:15px;
-                color:gray; 
+                color:#363A42; 
                 text-align:center;
                 border-collapse:collapse;
-                font-family:微軟正黑體;
-               
+                font-family:微軟正黑體;              
             }
 
+            tr.group{
 
+            }
             td.t{
                 background-color:#FFFFDE;
                 height:45px;
+                border-collapse:collapse;
+
             }
+            td.semester-title{
+
+            }
+
+
             
             .group{
                 background-color:#d2b48c
@@ -251,23 +264,40 @@
             </form>
         </div><!--search end -->
 
-
-
         <div id='classtable'>
             <table border=1>
                 <colgroup class='group' width='5%'></colgroup>
                 <colgroup class='group' width='15%'></colgroup>
                 <thead>
+                    <tr class='semester'>
+                        <td colspan='4' class='semester-title'>SEMESTER</td>
+                        <td colspan='5' class='semester-title'>
+                            <form><select name='semester-num'>
+                                <option value='109-1' selected>109-1</option>
+                                <option value='109-2'>109-2</option>
+                                <option value='110-1'>110-1</option>
+                                <option value='110-2'>110-2</option>
+                            </select></form>
+                        </td>
+
+
+                    </tr>
                     <tr class='group'>
                         <td>節次</td><td>時間</td>
                         <td>一</td><td>二</td>
                         <td>三</td><td>四</td>
                         <td>五</td><td>六</td>
-                        <td>日</td></tr>
+                        <td>日</td>
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="item in tabletime" ><td>{{item.session}}</td><td>{{item.time}}</td><td class="t" v-if="item.session ==='N'" colspan="7"></td>
-                    <td class="t" v-else v-for="n in 7"></td></tr>
+                    <tr class='classblock' v-for="item in tabletime" >
+                        <td>{{item.session}}</td>
+                        <td>{{item.time}}</td>
+                        
+                        <td class="t" v-if="item.session ==='N'" colspan="7"></td>
+                        <td class="t" v-else v-for="n in 7"></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -283,8 +313,7 @@
                 <tr><td class='credit-general'>通識O/O學分</td>
                     <td class='credit-seclan'>二外O/O學分</td>
                     <td class='credit-chineseenglish'>基礎O/O學分</td>
-                    <td class='credit-pe'>體育O/O學分</td>
-                    
+                    <td class='credit-pe'>體育O/O學分</td>                    
                     <td other='credit-other'></td></tr>
             </table>
         </div>
