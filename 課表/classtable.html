@@ -29,19 +29,6 @@
                 text-align:center;
             }
             
-            
-    
-            .slec{
-                position: absolute;
-                
-                top:20%;
-                left:25%;
-                width:100px; 
-                height:40px;
-                line-height: 55px;
-                font-size: 1.5rem;
-            }
-
             #but{
                 position: relative;
                 top:100px;
@@ -228,6 +215,32 @@
                 border-color: #00bfff;
             }
             
+            #list-list{
+                position:absolute;
+                left:760px;
+                top:130px;
+                list-style-type:none;
+            }
+            td.l{
+                height:45px;
+                width:100px;
+            }
+            #major{
+                width:42%;
+                font-size:15px;
+                color:gray; 
+                text-align:center;
+                border-collapse:collapse;
+                font-family:微軟正黑體;
+            }
+            .list-scroll{
+                overflow-y:scroll;
+                
+            }
+            .list-table{
+                display:block;
+                height:100px;
+            }
         </style>
     </head>
 
@@ -289,12 +302,26 @@
             </table>
         </div>
 
-        <div id=''>
+        <div id='list'>
+            <ul id='list-list'>
+            <li v-for="item in listname" id="{{ item.name }}" >
+                   <table v-on:click="display" class='list-title' border='1'>
+                       <tr><td class='l' v-for="n in 4">1</td></tr>
+                   </table>
+                   <div class='list-scroll'>
+                       <table v-show="seen" class='list-table' border='1'>
+                            <tr v-for="n in 10"><td class='l' v-for="n in 8">1</td></tr>
+                       </table>
+                   </div>
+                   <br><br>
+                </li>
+            </ul>
             
         </div>
     
         
      <script>
+        $('.class-table').hide();
         table= new Vue({
             el:"#classtable",
             data:{
@@ -318,6 +345,30 @@
                 ]
                 
             }
+
+         })
+
+         list=new Vue({
+             el:"#list",
+             data:{
+                 listname:[
+                     {name:'major'},
+                     {name:'dbmajor'},
+                     {name:'minoer'},
+                     {name:'general'},
+                     {name:'seclan'},
+                     {name:'pe'},
+                     {name:'chineseenglish'},
+                     {name:'outside'},
+                     {name:'program'},
+                 ],
+                 top:0,
+             },
+             methods:{
+                 display:function(){
+                     $('.list-table').show();
+                 }
+             }
          })
      </script>
 
