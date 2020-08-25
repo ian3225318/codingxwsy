@@ -302,8 +302,7 @@
                 <tbody>
                     <tr class='classblock' v-for="item in tabletime" >
                         <td>{{item.session}}</td>
-                        <td class="t" v-if="item.session ==='N'" colspan="7"></td>
-                        <td class="t" :class="n+'_'+item.session" v-else v-for="n in week" ></td>
+                        <td class="t" :class="'['+n+']'+item.session"  v-for="n in week" ></td>
                     </tr>
                 </tbody>
             </table>
