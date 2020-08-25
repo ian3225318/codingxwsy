@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>classtable</title>
+        <title>NCKU MSY</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
         <style>
@@ -9,17 +9,17 @@
                 overflow-x:hidden;
             }
             html{
-                background-color: #fff8dc;
+                background-image: url(images\BG-01.jpg);
             }
-            #left{
+            #tools{
                 position:fixed;
                 top:-20px;
                 left:0px;
-                background-color:#cd853f;
+                background-color:#181C49;
                 height:150%;
-                width:4%
-
+                width:3.8%
             }
+
             #block{
                 position:absolute;
                 top:0px;
@@ -75,6 +75,7 @@
                 line-height: 55px;
                 font-size: 1.5rem;
             }
+
             #but{
                 position: relative;
                 top:100px;
@@ -85,40 +86,80 @@
                 height:50px;
 
             }
-            #setting{
+            #goto-setting{
                 position:absolute;
-                left:-28px;
-                top:70px;
-                widows: 60px;
-                height:60px;
+                left:0px;
+                top:50px;
+                widows:55px;
+                height:55px;
             }
-            #head{
+            #goto-table{
                 position:absolute;
-                left:-28px;
-                top:20px;
-                widows: 60px;
-                height:60px;
+                left:0px;
+                top:120px;
+                widows:55px;
+                height:55px;
             }
-            #home{
+            #goto-share{
                 position:absolute;
-                left:-28px;
-                top:700px;
-                widows: 60px;
-                height:60px;
+                left:0px;
+                top:190px;
+                widows:55px;
+                height:55px;
+            }            
+            #logout{
+                position:absolute;
+                left:0px;
+                top:670px;
+                widows:55px;
+                height:55px;
             }
-            #year{
+
+
+            #title-timetable{
+                position:absolute;
+                top:-12px;
+                left:100px;
+                widows:100px;
+            }
+
+            #title-search{
+                position:absolute;
+                top:-12px;
+                left:800px;
+                widows:100px;
+            }
+
+            #title{
+                font-family:Century Gothic,微軟正黑體;
+                font-weight:bold;
+                font-size:25px;
+            }
+
+            #keyword-search{
+                position:absolute;
+                top:45px;
+                left:800px;
+                
+            }
+            #bt-search{
                 position:relative;
-                top:10px;
-                left:90px;
+                top:34px;
+                left:1160px;
+                widows:30px;
+                height:30px;
             }
-            table{
+
+
+            #credit-table{
                 position:absolute;
                 top:50px;
                 left:100px;
-                width:43%;
+                width:35%;
                 font-size:16px; 
                 text-align:center;
                 border-collapse:collapse;
+                font-family:微軟正黑體;
                 
             }
             td.t{
@@ -159,16 +200,30 @@
             
         </style>
     </head>
+
     <body>
-        <div id='left'>
-           <p><a href="#"><img id='head' src='Untitled-removebg-preview.png'></a></p>
-           <p><a href="#"><img id='setting' src='Untitled-removebg-preview.png'></a></p>
-           <p><a href="#"><img id='home' src='Untitled-removebg-preview.png'></a></p>
-           
-        </div>
+        <div id='tools'>
+           <p><a href="#"><img id='goto-setting' src='images\button\tools_button-06.png'></a></p>
+           <p><a href="#"><img id='goto-table' src='images\button\tools_button-07.png'></a></p>
+           <p><a href="#"><img id='goto-share' src='images\button\tools_button-08.png'></a></p>
+           <p><a href="#"><img id='logout' src='images\button\tools_button-09.png'></a></p> 
+        </div><!--tools end -->
        
-        <div id='con'>
-            <p id='year'>年份:</p>
+        <div id='title'>
+            <p id='title-timetable'>SCHOOL TIMETABLE</p>
+            <p id='title-search'>FIND CLASS</p>
+        </div><!--title end -->
+
+        <div id='search'>
+            <form>
+                <input type='search' id='keyword-search' name='keyword' placeholder='｜ SEARCH' size='50'>
+                <input type='image' id='bt-search' src='images\button\bt-search-10.png' alt='bt-search-10.png'>
+            </form>
+        </div><!--search end -->
+
+
+
+        <!--div id='con'>
             <table border=1>
                 <colgroup class='group' width='5%'></colgroup>
                 <colgroup class='group' width='15%'></colgroup>
@@ -193,8 +248,26 @@
                 <tr><td>C</td><td>20:10-21:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
                 <tr><td>D</td><td>21:10-22:00</td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
                 <tr><td>E</td><td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td><td class='t'></td></tr>
-                </tbody>
+                </tbody-->
+
+        <div id='credit'>
+            <table id='credit-table'>
+                <tr><td class='credit-major'>主修O/O學分</td>
+                    <td class='credit-outside'>系外O/O學分</td>
+                    <td class='credit-minoer'>輔系O/O學分</td>
+                    <td class='credit-dbmajor'>雙主O/O學分</td>
+                    <td class='credit-general'>通識O/O學分</td></tr>
+                <tr><td class='credit-seclan'>二外O/O學分</td>
+                    <td class='credit-chineseenglish'>基礎O/O學分</td>
+                    <td class='credit-pe'>體育O/O學分</td>
+                    <td class='credit-program'>學程O/O學分</td>
+                    <td other='credit-other'></td></tr>
+            </table>
+
+
+        </div>
     
+        <!--
         <div id='block'>
             <p class='slide1 slide'>
                 <a href='#' class='slec'>本系</a>
@@ -278,6 +351,7 @@
             </div>
                
         </div>
+
         <script type="text/javascript">
             $(function(){
              $('.main').hide();
@@ -303,5 +377,8 @@
              })
             
          </script>
+     -->
+
+
     </body>
 </html>
