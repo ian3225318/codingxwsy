@@ -6,7 +6,7 @@
         <script src="https://unpkg.com/vue/dist/vue.js"></script> 
         <style>
             body{
-                overflow-x:hidden;
+                overflow-x:auto;
                 background-image: url('images/BG-01.png');
                 background-size:cover;
                 background-repeat:repeat;
@@ -563,26 +563,25 @@
                        <table class='list-table hide' border='1'>
                             <colgroup>
                                 <col class=list-line-1>
-                                <col span='1' class=list-line-2>
-                                <col span='1' class=list-line-3>
-                                <col span='1' class=list-line-4>
-                                <col span='1' class=list-line-5>
-                                <col span='1' class=list-line-6>
-                                <col span='1' class=list-line-7>
+                                <col span='1' :class="'list-line-'+(n+1)" v-for="n in 6">
                             </colgroup>
-
-                            <tr class='list-table-name'>
-                                <td style='empty-cells:show;'></td>
-                                <td>系號-序號 選/必</td>
-                                <td>年級</td>
-                                <td>科目名稱</td>
-                                <td>學分</td>
-                                <td>教師</td>
-                                <td>時間/教室</td>
-                            </tr>
-                            <tr v-for="n in 10">
-                                <td class='class-plus'><a href='#'><img id='list-openbutton' src='images\list-plusbutton-14-15.png'></a></td>
-                                <td class='l' v-for="n in 6">DALA</td></tr>
+                            <thead>
+                                <tr class='list-table-name'>
+                                    <td style='empty-cells:show;'></td>
+                                    <td>系號-序號 選/必</td>
+                                    <td>年級</td>
+                                    <td>科目名稱</td>
+                                    <td>學分</td>
+                                    <td>教師</td>
+                                    <td>時間/教室</td>
+                                </tr>
+                            </thead>
+                            <tbody style="table-layout: scroll;">
+                                <tr v-for="n in 10">
+                                    <td class='class-plus'><a href='#'><img id='list-openbutton' src='images\list-plusbutton-14-15.png'></a></td>
+                                    <td class='l'  v-for="n in tdclassname" :class="n.name">{{ n.name }}</td></tr>
+                            </tbody>
+                            
                        </table>
                    </div>
                    <br>
@@ -591,9 +590,7 @@
         </div>
     </body>
     <script>
-       
-        $(".hide").hide();
-        $(".show").show();
+       $(".hide").hide();
         table= new Vue({
             el:"#classtable",
             data:{
@@ -613,10 +610,9 @@
                     {session:'B'},
                     {session:'C'},
                     {session:'D'},    
-                ],
-                week:[
-                    '1','2','3','4','5','6','7'
-                ]               
+                ], 
+
+                      
             }
          })
 
@@ -640,7 +636,17 @@
                     {name:'department'},
                     {name:'year'},
                     {name:'required'},
-                ]                
+                ],
+                tdclassname:[
+                    {name:'td-index'},
+                    {name:'td-grade'},
+                    {name:'td-subject'},
+                    {name:'td-credit'},
+                    {name:'td-teacher'},
+                    {name:'td-timeroom'},
+
+                ]     
+
              },
              methods:{
                 showhide:function(event){
@@ -648,8 +654,6 @@
                     target=event.currentTarget;
                     cur=$(target).parent().parent().parent().next().children().attr('class');
                     mark=cur.slice(11,15);
-            
-                    this.click+=1;
                     if(mark=="hide"){
                         $(target).parent().parent().parent().next().children().removeClass("hide");
                         $(target).parent().parent().parent().next().children().addClass("show");
@@ -666,7 +670,7 @@
              },
             
          })
-       
+        
      </script>
      
 </html>
