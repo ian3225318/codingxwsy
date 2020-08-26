@@ -293,7 +293,7 @@
                 <tbody>
                     <tr class='classblock' v-for="item in tabletime" >
                         <td>{{item.session}}</td>
-                        <td class="t" :class="'['+n+']'+item.session"  v-for="n in week" ></td>
+                        <td class="t" :class="'['+n+']'+item.session"  v-for="n in 7" ></td>
                     </tr>
                 </tbody>
             </table>
@@ -354,9 +354,18 @@
                     {session:'C'},
                     {session:'D'},    
                 ],
+<<<<<<< Updated upstream
                 week:[
                     '1','2','3','4','5','6','7'
                 ]               
+=======
+                
+                   
+                
+                   
+                
+                
+>>>>>>> Stashed changes
             }
          })
 
