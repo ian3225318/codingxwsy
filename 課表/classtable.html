@@ -405,26 +405,30 @@
                      {name:'program'},
                  ],
                  click:0,
-               
+                 
                  
                 
              },
              methods:{
                 showhide:function(event){
+
                     target=event.currentTarget;
+                    cur=$(target).parent().parent().parent().next().children().attr('class');
+                    mark=cur.slice(11,15);
+            
                     this.click+=1;
-                    if(this.click%2!=0){
+                    if(mark=="hide"){
                         $(target).parent().parent().parent().next().children().removeClass("hide");
                         $(target).parent().parent().parent().next().children().addClass("show");
                     }
-                    else
+                    else if(mark=="show")
                     {
                         $(target).parent().parent().parent().next().children().removeClass("show");
                         $(target).parent().parent().parent().next().children().addClass("hide");
                     }
                     $(".hide").hide();
                     $(".show").show();
-                   
+                    
                 }
              },
             
