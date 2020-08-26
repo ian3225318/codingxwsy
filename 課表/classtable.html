@@ -7,8 +7,9 @@
         <style>
             body{
                 overflow-x:hidden;
-                background-image: url(images\BG-01.jpg);
-                background-repeat: repeat;
+                background-image: url('images/BG-01.png');
+                background-size:cover;
+                background-repeat:repeat;
             }
 
             /********************tools***********************/
@@ -171,10 +172,6 @@
             td.space{
                 empty-cells:show;
             }
-            td.t{
-                background-color:#FFFFFF;
-                height:45px;
-            }
             td.semester-title{
                 padding:5px;
                 color:#FFFFFF;
@@ -203,15 +200,19 @@
                 width:50px;
                 word-wrap: break-word; /*自動斷行*/
                 table-layout: fixed;
-            }
-            .classblock{
-
             }            
             .group{
                 background-color:#D1D2D3;
             }
             .line1{
                 background-color:#D1D2D3;
+            }
+            td.t{
+                background-color:#FFFFFF;
+                height:45px;
+            }
+            td.t._2_N{
+                background-color:red;
             }
 
 
@@ -293,7 +294,7 @@
                 <tbody>
                     <tr class='classblock' v-for="item in tabletime" >
                         <td>{{item.session}}</td>
-                        <td class="t" :class="'['+n+']'+item.session"  v-for="n in week" ></td>
+                        <td class="t" :class="n+item.session"  v-for="n in week" ></td>
                     </tr>
                 </tbody>
             </table>
@@ -330,7 +331,6 @@
             </ul>
             
         </div>
-    
         
      <script>
         $('.class-table').hide();
