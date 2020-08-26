@@ -7,8 +7,9 @@
         <style>
             body{
                 overflow-x:hidden;
-                background-image: url(images\BG-01.jpg);
-                background-repeat: repeat;
+                background-image: url('images/BG-01.png');
+                background-size:cover;
+                background-repeat:repeat;
             }
 
             /********************tools***********************/
@@ -62,13 +63,11 @@
                 position:absolute;
                 top:-12px;
                 left:100px;
-                widows:100px;
             }
             #title-search{
                 position:absolute;
                 top:-12px;
                 left:800px;
-                widows:100px;
             }
             #title{
                 font-family:Century Gothic,微軟正黑體;
@@ -171,10 +170,6 @@
             td.space{
                 empty-cells:show;
             }
-            td.t{
-                background-color:#FFFFFF;
-                height:45px;
-            }
             td.semester-title{
                 padding:5px;
                 color:#FFFFFF;
@@ -203,9 +198,6 @@
                 width:50px;
                 word-wrap: break-word; /*自動斷行*/
                 table-layout: fixed;
-            }
-            .classblock{
-
             }            
             .group{
                 background-color:#D1D2D3;
@@ -213,7 +205,18 @@
             .line1{
                 background-color:#D1D2D3;
             }
-            
+            td.t{
+                background-color:#FFFFFF;
+                height:45px;
+            }
+            /*td.t._2_N{
+                background-color:red;
+            }*/
+            [class$='N']{
+                background-color:red;
+            }
+
+
 
             /**********************list*********************/
             #list-list{
@@ -222,21 +225,48 @@
                 top:130px;               
                 list-style-type:none;
                 border-collapse:collapse;
+                border:none;
             }
             td.l{
-                height:40px;
+                /*height:30px;*/
                 width:80px;
+                border:none;
                 border-collapse:collapse;
+                
             }
             .list-scroll{
                 overflow-y:scroll; 
-                border-collapse:collapse; 
+                overflow-:scroll;
+                border-collapse:collapse;
+                background-color:white;
+                width:670px;
             }
-            .list-table{
+            .list-table{  
                 display:block;
                 height:100px;
-                border-collapse:collapse;
+                border:none;
+                text-align:center;
+                padding:5px;              
             }
+            .list-title{     /*only list title border*/
+                height:40px;
+                border-collapse:collapse;
+                border:none; 
+                width:670px; 
+                background-color:#E25465;
+                border-top-left-radius:25px;
+                border-top-right-radius:5px;
+                border-bottom-left-radius:5px;
+                border-bottom-right-radius:5px;
+                text-align:center;              
+            }
+
+        <style module>
+            td.t._2_N{
+                background-color:white;
+            }
+        </style>
+            
         </style>
     </head>
 
