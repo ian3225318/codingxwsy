@@ -224,29 +224,31 @@
                 left:760px;
                 top:130px;               
                 list-style-type:none;
-                border-collapse:collapse;
                 border:none;
             }
             td.l{
                 /*height:30px;*/
                 width:80px;
                 border:none;
-                border-collapse:collapse;
-                
+                padding:8px;
+                border-bottom:solid gray 1px;   
             }
             .list-scroll{
                 overflow-y:scroll; 
                 overflow-:scroll;
-                border-collapse:collapse;
                 background-color:white;
                 width:670px;
+                border-bottom-left-radius:5px;
+                border-bottom-right-radius:5px; 
+                border-top-left-radius:5px; 
             }
             .list-table{  
                 display:block;
                 height:100px;
                 border:none;
                 text-align:center;
-                padding:5px;              
+                border-collapse:collapse;
+
             }
             .list-title{     /*only list title border*/
                 height:40px;
@@ -260,12 +262,71 @@
                 border-bottom-right-radius:5px;
                 text-align:center;              
             }
-
-        <style module>
-            td.t._2_N{
-                background-color:white;
+            .plus{
+                width:10%;
+                border:none;
             }
-        </style>
+            #list-openbutton{
+                width:23px;
+                height:23px;
+            }
+
+            /*****list table first block*****/
+            li.major td.l.type {
+                background-color:#E25465;
+                border-top-left-radius:25px;
+                border-bottom-left-radius:5px;
+                width:10%;
+            }
+            li.dbmajor td.l.type {
+                background-color:#E25465;
+                border-top-left-radius:25px;
+                border-bottom-left-radius:5px;
+                width:10%;
+            }
+            li.minoer td.l.type {
+                background-color:#F76D77;
+                border-top-left-radius:25px;
+                border-bottom-left-radius:5px;
+                width:10%;
+            }
+            li.outside td.l.type {
+                background-color:#489BED;
+                border-top-left-radius:25px;
+                border-bottom-left-radius:5px;
+                width:10%;
+            }
+            li.general td.l.type {
+                background-color:#39D5DC;
+                border-top-left-radius:25px;
+                border-bottom-left-radius:5px;
+                width:10%;
+            }
+            li.seclan td.l.type {
+                background-color:#39D5DC;
+                border-top-left-radius:25px;
+                border-bottom-left-radius:5px;
+                width:10%;
+            }
+            li.chineseenglish td.l.type {
+                background-color:#FAC143;
+                border-top-left-radius:25px;
+                border-bottom-left-radius:5px;
+                width:10%;
+            }
+            li.pe td.l.type {
+                background-color:#FAC143;
+                border-top-left-radius:25px;
+                border-bottom-left-radius:5px;
+                width:10%;
+            }
+            li.program td.l.type {
+                background-color:#9876EA;
+                border-top-left-radius:25px;
+                border-bottom-left-radius:5px;
+                width:10%;
+            }
+
             
         </style>
     </head>
@@ -344,16 +405,17 @@
 
         <div id='list'>
             <ul id='list-list'>
-            <li v-for="item in listname" :id="item.name" >
+            <li v-for="item in listname" :class="item.name" >
                    <table class='list-title' border='1'>
-                       <tr><td class='l' :class="n.name" v-for="n in classname">1</td><td class='plus' v-on:click="showhide">+</td></tr>
+                       <tr><td class='l' :class="n.name" v-for="n in classname">1</td>
+                        <td class='plus' v-on:click="showhide"><img id='list-openbutton' src='images\list-openbutton-14.png'></td></tr>
                    </table>
                    <div class='list-scroll'>
                        <table class='list-table hide' border='1'>
                             <tr v-for="n in 10"><td class='l' v-for="n in 8">1</td></tr>
                        </table>
                    </div>
-                   <br><br>
+                   <br>
                 </li>
             </ul>
             
