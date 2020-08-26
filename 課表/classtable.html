@@ -346,7 +346,7 @@
             <ul id='list-list'>
             <li v-for="item in listname" :id="item.name" >
                    <table class='list-title' border='1'>
-                       <tr><td class='l' v-for="n in 4">1</td><td v-on:click="showhide">+</td></tr>
+                       <tr><td class='l' :class="n.name" v-for="n in classname">1</td><td class='plus' v-on:click="showhide">+</td></tr>
                    </table>
                    <div class='list-scroll'>
                        <table class='list-table hide' border='1'>
@@ -404,7 +404,13 @@
                      {name:'outside'},
                      {name:'program'},
                  ],
-                 click:0,
+                
+                classname:[
+                    {name:'type'},
+                    {name:'department'},
+                    {name:'year'},
+                    {name:'required'},
+                ]
                  
                  
                 
