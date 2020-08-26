@@ -213,7 +213,7 @@
             .line1{
                 background-color:#D1D2D3;
             }
-
+    
 
 
             /**********************list*********************/
@@ -293,7 +293,7 @@
                 <tbody>
                     <tr class='classblock' v-for="item in tabletime" >
                         <td>{{item.session}}</td>
-                        <td class="t" :class="'['+n+']'+item.session"  v-for="n in 7" ></td>
+                        <td class="t" :class="n+'_'+item.session"  v-for="n in 7" ></td>
                     </tr>
                 </tbody>
             </table>
@@ -321,7 +321,7 @@
                        <tr><td class='l' v-for="n in 4">1</td></tr>
                    </table>
                    <div class='list-scroll'>
-                       <table v-show="seen" class='list-table' border='1'>
+                       <table class='list-table' border='1'>
                             <tr v-for="n in 10"><td class='l' v-for="n in 8">1</td></tr>
                        </table>
                    </div>
@@ -354,18 +354,9 @@
                     {session:'C'},
                     {session:'D'},    
                 ],
-<<<<<<< Updated upstream
                 week:[
                     '1','2','3','4','5','6','7'
                 ]               
-=======
-                
-                   
-                
-                   
-                
-                
->>>>>>> Stashed changes
             }
          })
 
@@ -384,7 +375,7 @@
                      {name:'outside'},
                      {name:'program'},
                  ],
-                 top:0,
+                 
              },
              methods:{
                  display:function(){
@@ -393,6 +384,6 @@
              }
          })
      </script>
-
+     
     </body>
 </html>
