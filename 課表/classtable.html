@@ -209,12 +209,31 @@
                 background-color:#FFFFFF;
                 height:45px;
             }
-            /*td.t._2_N{
-                background-color:red;
-            }*/
-            [class$='N']{
-                background-color:red;
+            .classblock td.t._1_N{
+                background-color:#F0F0F0;
             }
+            .classblock td.t._2_N{
+                background-color:#F0F0F0;
+            }
+            .classblock td.t._3_N{
+                background-color:#F0F0F0;
+            }
+            .classblock td.t._4_N{
+                background-color:#F0F0F0;
+            }
+            .classblock td.t._5_N{
+                background-color:#F0F0F0;
+            }
+            .classblock td.t._6_N{
+                background-color:#F0F0F0;
+            }
+            .classblock td.t._7_N{
+                background-color:#F0F0F0;
+            }
+            .classblock [class*='N']]{
+                background-color:#F0F0F0;
+            }            
+
 
 
 
@@ -227,7 +246,6 @@
                 border:none;
             }
             td.l{
-                /*height:30px;*/
                 width:80px;
                 border:none;
                 padding:8px;
@@ -244,7 +262,7 @@
             }
             .list-table{  
                 display:block;
-                height:100px;
+                height:150px;
                 border:none;
                 text-align:center;
                 border-collapse:collapse;
@@ -271,65 +289,65 @@
                 height:23px;
             }
 
-            /*****list table first block type*****/
+            /********list table first block type********/
             li.major td.l.type {
                 background-color:#E25465;
                 border-top-left-radius:25px;
                 border-bottom-left-radius:5px;
-                width:10%;
+                width:8%;
             }
             li.dbmajor td.l.type {
                 background-color:#E25465;
                 border-top-left-radius:25px;
                 border-bottom-left-radius:5px;
-                width:10%;
+                width:8%;
             }
             li.minoer td.l.type {
                 background-color:#F76D77;
                 border-top-left-radius:25px;
                 border-bottom-left-radius:5px;
-                width:10%;
+                width:8%;
             }
             li.outside td.l.type {
                 background-color:#489BED;
                 border-top-left-radius:25px;
                 border-bottom-left-radius:5px;
-                width:10%;
+                width:8%;
             }
             li.general td.l.type {
                 background-color:#39D5DC;
                 border-top-left-radius:25px;
                 border-bottom-left-radius:5px;
-                width:10%;
+                width:8%;
             }
             li.seclan td.l.type {
                 background-color:#39D5DC;
                 border-top-left-radius:25px;
                 border-bottom-left-radius:5px;
-                width:10%;
+                width:8%;
             }
             li.chineseenglish td.l.type {
                 background-color:#FAC143;
                 border-top-left-radius:25px;
                 border-bottom-left-radius:5px;
-                width:10%;
+                width:8%;
             }
             li.pe td.l.type {
                 background-color:#FAC143;
                 border-top-left-radius:25px;
                 border-bottom-left-radius:5px;
-                width:10%;
+                width:8%;
             }
             li.program td.l.type {
                 background-color:#9876EA;
                 border-top-left-radius:25px;
                 border-bottom-left-radius:5px;
-                width:10%;
+                width:8%;
             }
 
 
             /*****list table plus*****/
-            li.major td.plus {
+            td.plus {
                 background-color:#E25465;
                 border-top-right-radius:5px;
                 border-bottom-right-radius:5px;
@@ -392,10 +410,46 @@
                 border:solid gray 1px;
             }
 
-
-            
+            /************list add class botton************/ 
+            li.major .list-line-1{
+                background-color:#E25465;
+                width:85px;
+            }
+            li.dbmajor .list-line-1{
+                background-color:#E25465;
+                width:85px;
+            }
+            li.minoer .list-line-1{
+                background-color:#F76D77;
+                width:85px;
+            }
+            li.outside .list-line-1{
+                background-color:#489BED;
+                width:85px;
+            }
+            li.general .list-line-1{
+                background-color:#39D5DC;
+                width:85px;
+            }
+            li.seclan .list-line-1{
+                background-color:#39D5DC;
+                width:85px;
+            }
+            li.chineseenglish .list-line-1{
+                background-color:#FAC143;
+                width:85px;
+            }
+            li.pe .list-line-1{
+                background-color:#FAC143;
+                width:85px;
+            }
+            li.program .list-line-1{
+                background-color:#9876EA;
+                width:85px;
+            }  
         </style>
     </head>
+
 
     <body id="wsy" v-on:click="a">
         <div id='tools'>
@@ -478,13 +532,25 @@
                    </table>
                    <div class='list-scroll'>
                        <table class='list-table hide' border='1'>
-                            <tr v-for="n in 10"><td class='l' v-for="n in 8">1</td></tr>
+                            <colgroup>
+                                <col class=list-line-1>
+                                <col span='1' class=list-line-2>
+                                <col span='1' class=list-line-3>
+                                <col span='1' class=list-line-4>
+                                <col span='1' class=list-line-5>
+                                <col span='1' class=list-line-6>
+                                <col span='1' class=list-line-7>
+                                <col span='1' class=list-line-8>
+                            </colgroup>
+
+                            <tr v-for="n in 10">
+                                <td class='class-plus'><a href='#'><img id='list-openbutton' src='images\list-plusbutton-14-15.png'></a></td>
+                                <td class='l' v-for="n in 7">1</td></tr>
                        </table>
                    </div>
                    <br>
                 </li>
-            </ul>
-            
+            </ul>           
         </div>
     </body>
     <script>
@@ -517,7 +583,6 @@
             }
          })
 
-
          list=new Vue({
              el:"#list",
              data:{
@@ -538,10 +603,7 @@
                     {name:'department'},
                     {name:'year'},
                     {name:'required'},
-                ]
-                 
-                 
-                
+                ]                
              },
              methods:{
                 showhide:function(event){
