@@ -83,8 +83,49 @@
             .group{
                 background-color:#D1D2D3;
             }
-
             
+            #bighead{
+                width: 300px;
+                height: 300px;
+                position: relative;
+                left: 350px;
+                top: 80px
+            }
+            #changebtn{
+                position: relative;
+                left: 75px;
+                top: 285px;
+                background: #3C3C3C;color: white;padding: 10px 20px;border-radius: 30px;
+                width:250px"
+            }
+            #circle-1{
+                width: 60px;
+                height: 60px;
+                position: relative;
+                top: 365px;
+                left: -190px;
+            }
+            #circle-2{
+                width: 60px;
+                height: 60px;
+                position: relative;
+                top: 365px;
+                left: -175px;
+            }
+            #circle-3{
+                width: 60px;
+                height: 60px;
+                position: relative;
+                top: 365px;
+                left: -160px;
+            }
+            #circle-4{
+                width: 60px;
+                height: 60px;
+                position: relative;
+                top: 365px;
+                left: -145px;
+            }
         </style>
     </head>
 
@@ -101,51 +142,21 @@
             <!-- <div class='jumbotron'></div>
                 <div class='container'> -->
                   <div class="row">
-                    <div _ngcontent-qgw-c72="" class="col-lg-7">
+                    <div  class="col-lg-7">
                         <section style="position: relative;top:45px">
-                        <img src='images/setting-item-12.png' style="width: 300px;
-                        height: 300px;
-                        position: relative;
-                        left: 350px;
-                        top: 80px">
-                        <a class='btn' href='#' style="position: relative;
-                        left: 75px;
-                        top: 285px;
-                        background: #3C3C3C;color: white;padding: 10px 20px;border-radius: 30px;
-                        width:250px">CHANGE IMAGE</a>
+                        <img id='bighead'src='images/setting-item-12.png' >
+                        <a id='changebtn'class='btn' href='#' >CHANGE IMAGE</a>
 
-                        <a href="#"><img id="circle-1" src='images/itemduck.jpg' style="width: 60px;
-                            height: 60px;
-                            position: relative;
-                            top: 365px;
-                            left: -190px;"></a>
-                        <a href="#"><img id="circle-2" src='images/item-thrmonster.png' style="width: 60px;
-                            height: 60px;
-                            position: relative;
-                            top: 365px;
-                            left: -175px;"></a>
-                        
-                        <a href="#"><img id="circle-3" src='images/image-space-3.png' style="width: 60px;
-                            height: 60px;
-                            position: relative;
-                            top: 365px;
-                            left: -160px;"></a>
-                            
-                        <a href="#"><img id="circle-4" src='images/image-space-4.png' style="width: 60px;
-                            height: 60px;
-                            position: relative;
-                            top: 365px;
-                            left: -145px;"></a>
+                        <a href="#"><img id="circle-1" src='images/itemduck.jpg' ></a>
+                        <a href="#"><img id="circle-2" src='images/item-thrmonster.png'></a>
+                        <a href="#"><img id="circle-3" src='images/image-space-3.png'></a>    
+                        <a href="#"><img id="circle-4" src='images/image-space-4.png'></a>
                         </section>
                         
                     </div>
-                    <div _ngcontent-qgw-c72="" class="col-lg-4">
-                        <!-- <div _ngcontent-qgw-c72="" class="card-rounded-lg-text-dark" style="position: relative;
-                        top: 70;"> 
-                            
-                            <div _ngcontent-qgw-c72="" class="card-body" style="display: inline-block;">
-                                <form _ngcontent-fsb-c68="" novalidate="" class="ng-pristine ng-invalid ng-touched"> -->
-                                <section id="personal" style="position: relative;top:80px;left:-30px">
+                    <div class="col-lg-4">
+                        
+                                <section id='selectimform'style="position: relative;top:80px;left:-30px">
                                 <div class='personal' style="position: relative;left: 55px;top: 80px">
                                 <form class='form'>
                                 
@@ -167,9 +178,13 @@
                                         border-radius: 30px;">MAJOR</label>
                                         
                                         <select name="major-sel" class='major-sel' style="border-radius: 30px;width: 250px;height: 35px;">
-                                            <option value="">請選擇科系</option>
-                                            <option :value="item.name" v-for="item in department">{{ item.name }}</option>
-                                            
+                                            <option value="select" selected>請選擇科系</option>
+                                            <option value=''>工業設計學系</option>
+                                            <option value="">統計學系</option>
+                                            <option value="">材料科學及工程學系</option>
+                                            <option value="">土木工程學系</option>
+                                            <option value="">化學工程學系</option>
+                                            <option value="">地球科學系</option>
                                         </select>
                                     </div>
                                     <div class="form-group">  
@@ -239,92 +254,7 @@
                     </div>
                 </div>
             <!-- </div> -->
+        
+
     </body>
-    <script>
-        personal=new Vue({
-            el:"#personal",
-            data:{
-                department:[
-                {name:'中國文學系'},
-                {name:'外國語文學系'},
-                {name:'歷史學系'},
-                {name:'臺灣文學系'},
-                {name:'數學系'},
-                {name:'化學系'},
-                {name:'物理學系'},
-                {name:'地球科學系'},
-                {name:'光電科學與工程學系'},
-                {name:'會計學系'},
-                {name:'統計學系'},
-                {name:'企業管理學系'},
-                {name:'交通管理科學系'},
-                {name:'工業與資訊管理學系'},
-                {name:'機械工程學系'},
-                {name:'化學工程學系'},
-                {name:'土木工程學系'},
-                {name:'材料科學及工程學系'},
-                {name:'水利及海洋工程學系'},
-                {name:'工程科學系'},
-                {name:'系統及船舶機電工程學系'},
-                {name:'航空太空工程學系'},
-                {name:'資源工程學系'},
-                {name:'環境工程學系'},
-                {name:'生物醫學工程學系'},
-                {name:'測量及空間資訊學系'},
-                {name:'能源國際學士學位學程'},
-                {name:'電機工程學系'},
-                {name:'資訊工程學系'},
-                {name:'政治學系'},
-                {name:'經濟學系'},
-                {name:'心理學系'},
-                {name:'建築學系'},
-                {name:'都市計劃學系'},
-                {name:'工業設計學系'},
-                {name:'生命科學系'},
-                {name:'生物科技與產業科學系'},
-                {name:'醫學系'},
-                {name:'藥學系'},
-                {name:'護理學系'},
-                {name:'牙醫學系'},
-                {name:'物理治療學系'},
-                {name:'職能治療學系'},
-                {name:'醫學檢驗生物技術學系'},
-                {name:'全校不分系學士學位學程'},
-                ],
-
-                program:[
-                {name:'太空科學與工程學分學程'},
-                {name:'先端手術研究轉譯醫學學分學程'},
-                {name:'再生醫學科技學分學程'},
-                {name:'老化與生活'},
-                {name:'防災科技管理學分學程'},
-                {name:'奈米先進技術與設備學分學程'},
-                {name:'奈米積體電路工程碩士班學分學程'},
-                {name:'性別研究學分學程'},
-                {name:'美學與藝術跨域學分學程'},
-                {name:'設計思考跨域創力學程(創力學程)'},
-                {name:'創意設計學程'},
-                {name:'循環經濟'},
-                {name:'跨維綠能材料學程'},
-                {name:'跨領域永續發展全英語學分學程(CPSD)'},
-                {name:'跨學門民航學分學程'},
-                {name:'電漿學分學程'},
-                {name:'歷史與科技社會學分學程'},
-                {name:'醫學、科技與社會學程(STM)'},
-                {name:'醫療器材與系統學程'},
-                {name:'鐵道運輸'},
-                {name:'巨量資料分析學分學程'},
-                {name:'人工智慧學分學程'},
-                {name:'服務科學與體驗'},
-                {name:'東南亞文化學分學程'},
-                {name:'智慧生醫學分學程'},
-                {name:'新聞與傳播學程'},
-                {name:'應用哲學學程'},
-                {name:'戲劇學程'},
-
-                ],
-            }
-        })
-
-    </script>
 </html>
