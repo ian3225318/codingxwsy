@@ -18,9 +18,7 @@
                 overflow-x:hidden;
                 overflow-y:hidden 
             }
-            html{
-                
-            }
+           /* ---tools--- */
             #tools{
                 position:fixed;
                 top:-20px;
@@ -30,25 +28,6 @@
                 width:3.8%
             }
 
-            #block{
-                position:absolute;
-                top:0px;
-                left:750px;
-                width: 250px;
-                height: 1000px;
-                text-align:center;
-            }
-            
-            #but{
-                position: relative;
-                top:100px;
-                
-            }
-            #plus{
-                width: 50px;
-                height:50px;
-
-            }
             #goto-setting{
                 position:absolute;
                 left:0px;
@@ -56,6 +35,7 @@
                 widows:55px;
                 height:55px;
             }
+
             #goto-table{
                 position:absolute;
                 left:0px;
@@ -63,13 +43,15 @@
                 widows:55px;
                 height:55px;
             }
+
             #goto-share{
                 position:absolute;
                 left:0px;
                 top:190px;
                 widows:55px;
                 height:55px;
-            }            
+            }
+
             #logout{
                 position:absolute;
                 left:0px;
@@ -77,13 +59,8 @@
                 widows:55px;
                 height:55px;
             }
-
-
-           
-            .group{
-                background-color:#D1D2D3;
-            }
             
+            /* --- change headshot cartoon --- */
             #bighead{
                 width: 300px;
                 height: 300px;
@@ -126,6 +103,56 @@
                 top: 365px;
                 left: -145px;
             }
+
+            /* --- setting personal information --- */
+            #movesection{
+                position: relative;top:80px;left:-30px
+            }
+            #originalsection{
+                position: relative;left: 55px;top: 80px
+            }
+            #user_id{
+                background:	#3C3C3C;
+                color: white;
+                width: 100px;
+                height: 35px;
+                border-radius: 30px
+            }
+            #major_name{
+                background:	#3C3C3C;
+                color: white;
+                width: 100px;
+                height: 35px;
+                border-radius: 30px;
+            }
+            #major-sel{
+                border-radius: 30px;width: 250px;height: 35px;
+            }
+            #system-sel{
+                background:	#3C3C3C;
+                color: white;
+                width: 100px;
+                height: 35px;
+                border-radius: 30px
+            }
+            #department-sel{
+                border-radius: 30px;width: 250px;height: 35px;
+            }
+            #btn-group{
+                position: relative;
+                left: 8px
+            }
+            #btnup{
+                position: relative;
+                top:80px;
+                left:100px;
+                border-radius: 80px;
+                width: 80px;
+                height: 80px;
+                font-weight: bolder;
+                background: #3C3C3C;
+                color: #FFFFFF 
+            }
         </style>
     </head>
 
@@ -146,7 +173,7 @@
                         <section style="position: relative;top:45px">
                         <img id='bighead'src='images/setting-item-12.png' >
                         <a id='changebtn'class='btn' href='#' >CHANGE IMAGE</a>
-                        <a href="#"><img id="circle-1" src='images/itemduck.jpg' ></a>
+                        <a href="#"><img id="circle-1" src='images/bear.png' ></a>
                         <a href="#"><img id="circle-2" src='images/item-thrmonster.png'></a>
                         <a href="#"><img id="circle-3" src='images/image-space-3.png'></a>    
                         <a href="#"><img id="circle-4" src='images/image-space-4.png'></a>
@@ -155,45 +182,27 @@
                     </div>
                     <div id="personal" class="col-lg-4">
                         
-                                <section id='selectimform'style="position: relative;top:80px;left:-30px">
-                                <div class='personal' style="position: relative;left: 55px;top: 80px">
+                                <section id='movesection'>
+                                <div id="originalsection"class='personal'>
                                 <form class='form'>
-                                
-                                   
-
                                     <div class="form-group"  >
-                                        <label for="user_id" style="background:	#3C3C3C;
-                                        color: white;
-                                        width: 100px;
-                                        height: 35px;
-                                        border-radius: 30px">NAME</label>
-                                        <input type="text" name="" id="user_id" placeholder="account name" style="border-radius: 30px;width: 250px;height: 35px;">
+                                        <label for="user_id" id='user_id'>NAME</label>
+                                        <input type="text" name="" id="" placeholder="account name" style="border-radius: 30px;width: 250px;height: 35px;">
                                     </div>
                                     <div class='form-group'>
-                                        <label for='major_name' style="background:	#3C3C3C;
-                                        color: white;
-                                        width: 100px;
-                                        height: 35px;
-                                        border-radius: 30px;">MAJOR</label>
-                                        
-                                        <select name="major-sel" class='major-sel' style="border-radius: 30px;width: 250px;height: 35px;">
-
+                                        <label for='major_name' id='major_name' >MAJOR</label>
+                                        <select id="major-sel" class='major-sel' >
                                             <option value="">請選擇科系</option>
                                             <option :value="item.name" v-for="item in department">${ item.name }</option>
-
                                         </select>
                                     </div>
                                     <div class="form-group">  
-                                    <select  v-model="goat1" name="system-sel" class='major-sel' style="background:	#3C3C3C;
-                                    color: white;
-                                    width: 100px;
-                                    height: 35px;
-                                    border-radius: 30px">
+                                    <select  v-model="goat1" id="system-sel" class='system-sel'>
                                         <option value="">-學制-</option>
                                         <option :value="item.value" v-for="item in choice">${ item.name }</option>
                                         
                                     </select>
-                                    <select name="department-sel" class='department-sel'style="border-radius: 30px;width: 250px;height: 35px;">
+                                    <select id="department-sel" class='department-sel'>
                                             <option value="">請選擇科系</option>
                                             <option :value="item.name" v-if="goat1==='program'" v-for="item in program">${ item.name }</option>
                                             <option :value="item.name" v-else v-for="item in department">${ item.name }</option>
@@ -201,15 +210,11 @@
                                     </div>
 
                                     <div class="form-group">  
-                                        <select v-model="goat2" name="system-sel" class='major-sel' style="background:	#3C3C3C;
-                                        color: white;
-                                        width: 100px;
-                                        height: 35px;
-                                        border-radius: 30px">
+                                        <select v-model="goat2" id="system-sel" class='system-sel'>
                                             <option value="">-學制-</option>
                                             <option :value="item.value" v-for="item in choice">${ item.name }</option>
                                         </select>
-                                        <select name="department-sel" class='major-sel'style="border-radius: 30px;width: 250px;height: 35px;">
+                                        <select id="department-sel" class='major-sel'>
                                             <option value="">請選擇科系</option>
                                             <option :value="item.name" v-if="goat2==='program'" v-for="item in program">${ item.name }</option>
                                             <option :value="item.name" v-else v-for="item in department">${ item.name }</option>
@@ -217,10 +222,8 @@
                                         </div>
 
 
-                                    <div class="btn-group" style="position: relative;
-                                    left: 8px">
-                                        <button class="btnup" style="position: relative;top:80px;left:100px;border-radius: 80px;width: 80px;height: 80px;font-weight: bolder;
-                                        background: #3C3C3C;color: #FFFFFF;">SAVE </button>
+                                    <div id="btn-group" >
+                                        <button id="btnup">SAVE </button>
                                     </div>
                                     
                                 
