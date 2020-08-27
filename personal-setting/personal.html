@@ -168,50 +168,40 @@
                                         
                                         <select name="major-sel" class='major-sel' style="border-radius: 30px;width: 250px;height: 35px;">
                                             <option value="">請選擇科系</option>
-                                            <option :value="item.name" v-for="item in department">{{ item.name }}</option>
+                                            <option :value="item.name" v-for="item in department">${ item.name }</option>
                                             
                                         </select>
                                     </div>
                                     <div class="form-group">  
-                                    <select name="system-sel" class='major-sel' style="background:	#3C3C3C;
+                                    <select  v-model="goat1" name="system-sel" class='major-sel' style="background:	#3C3C3C;
                                     color: white;
                                     width: 100px;
                                     height: 35px;
                                     border-radius: 30px">
-                                        <option value="select" selected>-學制-</option>
-                                        <option value="db">雙主修</option>
-                                        <option value='minor'>輔系</option>
-                                        <option value="program">學分學程</option>
+                                        <option value="">-學制-</option>
+                                        <option :value="item.value" v-for="item in choice">${ item.name }</option>
+                                        
                                     </select>
                                     <select name="department-sel" class='department-sel'style="border-radius: 30px;width: 250px;height: 35px;">
-                                        <option value="select" selected>請選擇科系</option>
-                                        <option value=''>工業設計學系</option>
-                                        <option value="">統計學系</option>
-                                        <option value="">材料科學及工程學系</option>
-                                        <option value="">土木工程學系</option>
-                                        <option value="">化學工程學系</option>
-                                        <option value="">地球科學系</option>
+                                            <option value="">請選擇科系</option>
+                                            <option :value="item.name" v-if="goat1==='program'" v-for="item in program">${ item.name }</option>
+                                            <option :value="item.name" v-else v-for="item in department">${ item.name }</option>
                                     </select>
                                     </div>
 
                                     <div class="form-group">  
-                                        <select name="system-sel" class='major-sel' style="background:	#3C3C3C;
+                                        <select v-model="goat2" name="system-sel" class='major-sel' style="background:	#3C3C3C;
                                         color: white;
                                         width: 100px;
                                         height: 35px;
                                         border-radius: 30px">
-                                            <option value="select" selected>-學制-</option>
-                                            <option value="db">雙主修</option>
-                                            <option value='minor'>輔系</option>
-                                            <option value="program">學分學程</option>
+                                            <option value="">-學制-</option>
+                                            <option :value="item.value" v-for="item in choice">${ item.name }</option>
                                         </select>
                                         <select name="department-sel" class='major-sel'style="border-radius: 30px;width: 250px;height: 35px;">
-                                            <option value=''>工業設計學系</option>
-                                            <option value="">統計學系</option>
-                                            <option value="">材料科學及工程學系</option>
-                                            <option value="">土木工程學系</option>
-                                            <option value="">化學工程學系</option>
-                                            <option value="">地球科學系</option>
+                                            <option value="">請選擇科系</option>
+                                            <option :value="item.name" v-if="goat2==='program'" v-for="item in program">${ item.name }</option>
+                                            <option :value="item.name" v-else v-for="item in department">${ item.name }</option>
                                         </select>
                                         </div>
 
@@ -243,7 +233,9 @@
     <script>
         personal=new Vue({
             el:"#personal",
+            delimiters: ['${', '}'],
             data:{
+                
                 department:[
                 {name:'中國文學系'},
                 {name:'外國語文學系'},
@@ -322,8 +314,18 @@
                 {name:'應用哲學學程'},
                 {name:'戲劇學程'},
 
+                ]
+                ,
+                choice:[
+                    {name:"雙主修",value:"dbmajor"},
+                    {name:"輔修",value:"minoer"},
+                    {name:"學分學程",value:"program"},
                 ],
-            }
+                goat1:"",
+                goat2:"",
+            },
+
+            
         })
 
     </script>
