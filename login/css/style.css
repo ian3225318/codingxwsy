@@ -1,0 +1,53 @@
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Baloo Tamma 2', cursive;
+}
+p,a,input,label,textarea,span,ul,li{
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.btnin{
+    background: #FF9797;
+    color: white;
+    padding: 2px 60px;
+    border-radius: 60px
+}
+.btnup{
+    background:	#80FFFF	;
+    color: white;
+    padding: 2px 60px;
+    border-radius: 60px
+}
+/* 網站的按鈕模式都先定義這樣 (如上)*/
+/* 讓上面多一個空間的方法: 加margin或把灰框置中[fix height](兩種方法) */
+/* 可以google : css now to vertically center div 會有很多寫法 */
+/* https://stackoverflow.com/questions/396145/how-to-vertically-center-a-div-for-all-browsers */
+
+#intro .jumbotron{
+    height:70vh;
+}
+#intro h1{
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+/* 記住不能加"." !!!有差!加 "." 跑不出來 */
+
+#intro .container{
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+/* 使灰框裡的字"往下"置中 ，它會自動去做 center alignment*/
+/* 在component 裡的 navbar  */
+
+header nav img{
+    width: 175px;
+}
+.login{
+    width: 600px;
+    height: 400px;
+    background-color: rgba(0,0,0,0);
+    border-radius:10px;
+    border:10px 
+}
