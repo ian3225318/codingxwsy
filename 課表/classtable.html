@@ -488,7 +488,7 @@
            <p><a href="#"><img id='logout' src='images\button\tools_button-09.png'></a></p> 
         </div><!--tools end -->
        
-<<<<<<< Updated upstream
+
         <div id='title'>
             <p id='title-timetable'>SCHOOL TIMETABLE</p>
             <p id='title-search'>FIND CLASS</p>
@@ -531,7 +531,7 @@
 
                 <tbody>
                     <tr class='classblock' v-for="item in tabletime" >
-                        <td>{{item.session}}</td>
+                        <td>${item.session}</td>
                         <td class="t" :class="'_'+n+'_'+item.session"  v-for="n in 7" ></td>
                     </tr>
                 </tbody>
@@ -580,7 +580,7 @@
                             <tbody style="table-layout: scroll;">
                                 <tr v-for="n in 10">
                                     <td class='class-plus'><a href='#'><img id='list-openbutton' src='images\list-plusbutton-14-15.png'></a></td>
-                                    <td class='l'  v-for="n in tdclassname" :class="n.name">{{ n.name }}</td></tr>
+                                    <td class='l'  v-for="n in tdclassname" :class="n.name">${ n.name }</td></tr>
                             </tbody>
                             
                        </table>
@@ -594,6 +594,7 @@
        $(".hide").hide();
         table= new Vue({
             el:"#classtable",
+            delimiters: ['${', '}'],
             data:{
                 tabletime:[
                     {session:'0'},
@@ -619,6 +620,7 @@
 
          list=new Vue({
              el:"#list",
+             delimiters: ['${', '}'],
              data:{
                  listname:[
                      {name:'major'},
