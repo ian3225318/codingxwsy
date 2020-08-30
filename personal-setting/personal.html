@@ -13,8 +13,9 @@
         <script src="https://unpkg.com/vue/dist/vue.js"></script> 
         <style>
             body{
-                background-image: url( 'pictures/BG-01.jpg' );
-                background-size: contain;
+                background-image: url( 'images/BG-01.jpg' );
+                background-size:cover;
+                background-repeat:repeat;
                 overflow-x:hidden;
                 overflow-y:hidden 
             }
@@ -25,7 +26,7 @@
                 left:0px;
                 background-color:#363A42;
                 height:150%;
-                width:3.8%
+                width:60px
             }
 
             #goto-setting{
@@ -159,9 +160,9 @@
     <body>
         <div id='tools'>
            <p><a href="#"><img id='goto-setting' src='images\button\tools_button-06.png'></a></p>
-           <p><a href="#"><img id='goto-table' src='images\button\tools_button-07.png'></a></p>
+           <p><a href="../classtable/classtable.html"><img id='goto-table' src='images\button\tools_button-07.png'></a></p>
            <p><a href="#"><img id='goto-share' src='images\button\tools_button-08.png'></a></p>
-           <p><a href="#"><img id='logout' src='images\button\tools_button-09.png'></a></p> 
+           <p><a href="../login/login.html"><img id='logout' src='images\button\tools_button-09.png'></a></p> 
         </div><!--tools end -->
        
         <section id='intro'>
