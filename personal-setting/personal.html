@@ -112,7 +112,7 @@
             #originalsection{
                 position: relative;left: 55px;top: 80px
             }
-            #user_id{
+            #user_name{
                 background:	#3C3C3C;
                 color: white;
                 width: 100px;
@@ -167,8 +167,7 @@
        
         <section id='intro'>
         
-            <!-- <div class='jumbotron'></div>
-                <div class='container'> -->
+            
                   <div class="row">
                     <div  class="col-lg-7">
                         <section style="position: relative;top:45px">
@@ -186,9 +185,21 @@
                                 <section id='movesection'>
                                 <div id="originalsection"class='personal'>
                                 <form class='form'>
+                                    <div class="form-group">
+                                        <label for="user_idnew" id="user_idnew">ACCOUNT NAME</label>
+                                        <input type="text" name="" id="user_id" placeholder="account name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="user_pwd" id="user_pwd">PASSWORD</label>
+                                        <input type="password" name="" id="user_pwd" placeholder="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="user_pwdag">PASSWORDAGAIN</label>
+                                        <input type="password" name="" id="user_pwdag" placeholder="password again">
+                                    </div>
                                     <div class="form-group"  >
-                                        <label for="user_id" id='user_id'>NAME</label>
-                                        <input type="text" name="" id="" placeholder="account name" style="border-radius: 30px;width: 250px;height: 35px;">
+                                        <label for="user_name" id='user_name'>NAME</label>
+                                        <input type="text" name="" id="" placeholder="user name" style="border-radius: 30px;width: 250px;height: 35px;">
                                     </div>
                                     <div class='form-group'>
                                         <label for='major_name' id='major_name' >MAJOR</label>
@@ -223,6 +234,7 @@
                                         </div>
 
 
+
                                     <div id="btn-group" >
                                         <button id="btnup">SAVE </button>
                                     </div>
@@ -243,7 +255,7 @@
                         
                     </div>
                 </div>
-            <!-- </div> -->
+          
 
     </body>
     <script>

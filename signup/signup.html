@@ -29,9 +29,9 @@
             .card-rounded-lg-text-dark{
                 background: #3C3C3C;
                 border-radius:30px;
-                height: 400px;
+                height: 500px;
                 position: relative;
-                top: 100;
+                top: 60;
             }
             body{
                 background-image: url( 'pictures/BG-01.jpg' );
@@ -55,21 +55,16 @@
                 left: 50px;
                 width: 300px;
             }
+            #user_pwdag{
+                position: relative;
+                left: 50px;
+                width: 300px;
+            }
             a{text-decoration:none; color:seashell;position: relative;left:40px}
             a:hover{text-decoration:underline;color: skyblue;}
 
-            .btnin{
-                background: #FF9797;
-                color: white;
-                padding: 2px 40px;
-                border-radius: 60px
-            }
-            .btnsignup{
-                background:	#80FFFF	;
-                color: white;
-                padding: 2px 40px;
-                border-radius: 60px
-            }
+            
+       
             #cutehead{
                 width: 500px;
                 height: 500px;
@@ -82,18 +77,23 @@
                 left: 50px;
                 top: -20px
             }
-            #signinname{
+            #signupname{
                 color:white;
                 position: relative;
                 left: 120px
             }
-            .btnsection{
-                position: relative;
-                left: 30px;
-            }
+   
             .btn-group{
                 position: relative;
                 left: 8px
+            }
+            .btnnext{
+                position: relative;
+                left:120px;
+                background:	#80FFFF	;
+                color: white;
+                padding: 2px 40px;
+                border-radius: 60px
             }
         </style>
        <title>多元選課wsy</title>
@@ -111,27 +111,23 @@
                         <div class="card-rounded-lg-text-dark"> 
                                 <div class='login'>
                                 <form class='form'>
-                                    <h1 id='signinname'>SIGN  IN</h1>
-                                    <div class="form-group" >
-                                        <label for="user_id"></label>
+                                    <h1 id='signupname'>SIGN UP</h1>
+                                    <div class="form-group">
+                                        <label for="user_idnew"></label>
                                         <input type="text" name="" id="user_id" placeholder="account name" required>
                                     </div>
-                                    <br>
                                     <div class="form-group">
                                         <label for="user_pwd"></label>
                                         <input type="password" name="" id="user_pwd" placeholder="password" required>
                                     </div>
-                                    <br>
-                                    <div class='btnsection'>
-                                    <div class="btn-group">
-                                        <button class="btnin">L O G I N</button>
+                                    <div class="form-group">
+                                        <label for="user_pwdag"></label>
+                                        <input type="password" name="" id="user_pwdag" placeholder="password again" required>
                                     </div>
                                     <div class="btn-group">
-                                        <button class="btnsignup">S I G N U P </button>
+                                        <button class="btnnext">N E X T </button>
                                     </div>
-                                    </div>
-                                    <br>
-                                    <a href="#"> Forgot your password ?</a>
+                                    
                                 </form>
                                 </div>
                         </div>
