@@ -29,34 +29,71 @@
             .card-rounded-lg-text-dark{
                 background: #3C3C3C;
                 border-radius:30px;
-                height: 500px;
+                height: 400px;
+                position: relative;
+                top: 100;
             }
-            .card-body{
-            }
-   
             body{
                 background-image: url( 'pictures/BG-01.jpg' );
                 background-size: contain;
                 overflow-x:hidden;
                 overflow-y:hidden 
             }
-            .alertname{
-                color:rgba(230, 122, 122, 0.884)
+            .form{
+                position: relative;
+                top: 80px;
+                left: -50px
             }
-            input:valid+.alertname{
-                display: none;
+            #user_id{
+                position: relative;
+                left: 50px;
+                width: 300px;
+                
             }
-            input:invalid+.alertname{
-                display: inline;
+            #user_pwd{
+                position: relative;
+                left: 50px;
+                width: 300px;
             }
-            .alertpassword{
-                color:rgba(230, 122, 122, 0.884)
+            a{text-decoration:none; color:seashell;position: relative;left:40px}
+            a:hover{text-decoration:underline;color: skyblue;}
+
+            .btnin{
+                background: #FF9797;
+                color: white;
+                padding: 2px 40px;
+                border-radius: 60px
             }
-            input:valid+.alertpassword{
-                display: none;
+            .btnsignup{
+                background:	#80FFFF	;
+                color: white;
+                padding: 2px 40px;
+                border-radius: 60px
             }
-            input:invalid+.alertpassword{
-                display: inline;
+            #cutehead{
+                width: 500px;
+                height: 500px;
+                position: relative;
+                left: 150px;
+                top: 50px;
+            }
+            .login{
+                position: relative;
+                left: 50px;
+                top: -20px
+            }
+            #signinname{
+                color:white;
+                position: relative;
+                left: 120px
+            }
+            .btnsection{
+                position: relative;
+                left: 30px;
+            }
+            .btn-group{
+                position: relative;
+                left: 8px
             }
         </style>
        <title>多元選課wsy</title>
@@ -66,73 +103,43 @@
         
         <section id='intro'>
     
-                  <div class="row">
-                    <div _ngcontent-qgw-c72="" class="col-md-7">
-                        <img src='pictures/loginpage-11_1.png' style="width: 500px;
-                        height: 500px;position: relative;left: 150px;top: 60px;">
+                <div class="row">
+                    <div  class="col-md-7">
+                        <img id='cutehead' src='pictures/loginpage-11_1.png'>
                     </div>
-                    <div _ngcontent-qgw-c72="" class="col-md-4">
-                        <div _ngcontent-qgw-c72="" class="card-rounded-lg-text-dark" style="position: relative;
-                        top: 70;"> 
-                            
-                            
-                                <div class='login' style="position: relative;left: 60px;top: 20px">
+                    <div  class="col-md-4">
+                        <div class="card-rounded-lg-text-dark"> 
+                                <div class='login'>
                                 <form class='form'>
-                                
-                                    <h2 style="color:white; position: relative;left: 30px">SIGN  IN</h2>
-
+                                    <h1 id='signinname'>SIGN  IN</h1>
                                     <div class="form-group" >
                                         <label for="user_id"></label>
                                         <input type="text" name="" id="user_id" placeholder="account name" required>
-                                        <span class="alertname">name required</span>
                                     </div>
+                                    <br>
                                     <div class="form-group">
                                         <label for="user_pwd"></label>
                                         <input type="password" name="" id="user_pwd" placeholder="password" required>
-                                        <span class="alertpassword">password required</span>
                                     </div>
-                                    <div class="btn-group" style="position: relative;
-                                    left: 8px">
+                                    <br>
+                                    <div class='btnsection'>
+                                    <div class="btn-group">
                                         <button class="btnin">L O G I N</button>
                                     </div>
-                                    
-                                    <hr style="border-bottom:2px #FFFFFF dotted" width="180px"/>
-
-                                    <h2 style="color:white ; position: relative;left: 30px">SIGN UP</h2>
-                                    <div class="form-group">
-                                        <label for="user_idnew"></label>
-                                        <input type="text" name="" id="user_id" placeholder="account name">
+                                    <div class="btn-group">
+                                        <button class="btnsignup">S I G N U P </button>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="user_pwd"></label>
-                                        <input type="password" name="" id="user_pwd" placeholder="password">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="user_pwdag"></label>
-                                        <input type="password" name="" id="user_pwdag" placeholder="password again">
-                                    </div>
-                                    <div class="btn-group" style="position: relative;
-                                    left: 8px">
-                                        <button class="btnup">N E X T </button>
-                                    </div>
-                                    
-                                
+                                    <br>
+                                    <a href="#"> Forgot your password?</a>
+                                </form>
                                 </div>
-                                </div>
-                                </div>
-                            
-        
                         </div>
-                            
-                            
-                            </form>
-                                
-                        </div>
-                    <div _ngcontent-qgw-c72="" class="col-md-1">
-                        
+                    <div _ngcontent-qgw-c72="" class="col-md-1"> 
+                    </div>
                     </div>
                 </div>
-            
+        </section>    
           
         
     </body>
