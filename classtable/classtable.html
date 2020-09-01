@@ -1,10 +1,559 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>NCKU WSY</title>
+        <title>NCKU WSY BACKUP</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://unpkg.com/vue/dist/vue.js"></script> 
+        <meta charset='utf-8'>
         <style>
+
+            /*screen pixel <=480px*/
+            @media screen and (max-width:480px){
+                /********************title***********************/
+                #title-timetable{
+                    float:left;
+                    top:-12px;
+                    margin-left:75px;
+                    margin-right:0%;
+                    width:280px;
+                    min-width:30%;
+                    
+                    font-weight:bold;
+                    font-size:25px;
+                }
+                #title-search{
+                    position:relative;
+                    top:120px;
+                    left:85px;
+                    width:250px;
+                    min-width:100px;
+                    
+                    font-weight:1000;
+                    font-size:23px;
+                }
+                #title{
+                    font-family:Century Gothic,微軟正黑體;
+                    color:#363A42;
+                }
+                
+                /********************search***********************/               
+                #keyword-search{
+                    position:absolute;
+                    top:255px;
+                    left:85px;
+                    width:50%;
+                    min-width:25px;
+                    margin-right:1px;
+
+                    height:22px;
+                    border-radius:12px;
+                    border: #363A42 solid;               
+                }
+                #bt-search{
+                    position:absolute;
+                    top:255px;
+                    left:50%;
+                    margin-left:26%;
+                    widows:30px;
+                    height:30px;
+                }
+
+                /********************credit-table***********************/
+                #credit-table{
+                    float:left;
+                    margin-left:70px;
+                    margin-right:3%;
+                    margin-top:-70px;
+                    margin-bottom:5px;
+                    width:85%;
+                    min-width:40%;
+
+                    font-size:13px;
+                    color:white; 
+                    text-align:center;
+                    border-collapse:collapse;
+                    font-family:微軟正黑體;
+                    border-collapse:separate;
+                    border-spacing:7px;
+                    font-weight:600;
+                }
+
+                /********************classtable***********************/
+                #ctct{
+                    float:left;
+                    width:85%;
+                    min-width:40%;
+                    margin-top:90px;                    
+                    margin-left:75px;
+                    margin-right:20px;
+                    margin-bottom:20px;
+
+                    border-style:none;                
+                    border-collapse:collapse;
+                    font-size:15px;
+                    font-family:微軟正黑體;
+                    text-align:center;              
+                }
+
+                /**********************list*********************/
+                #list-list{
+                    float:left;
+                    margin-left:40px;
+                    margin-right:20px;
+                    width:75%;
+            
+                    list-style-type:none;
+                    border:none;
+                }
+                td.l{
+                    border:none;
+                    padding:8px;
+                    border-bottom:solid #D1D2D3 1px;
+                    border-right:solid #D1D2D3 1px;
+                    font-family:微軟正黑體;
+                    font-size:12px;   
+                }
+                .list-scroll{
+                    overflow-y:scroll; 
+                    overflow-:scroll;
+                    background-color:white;
+                    width:110%;
+                    border-bottom-left-radius:10px;
+                    border-bottom-right-radius:5px; 
+                    border-top-left-radius:5px; 
+                }
+                .list-table-name{
+                    font-family:微軟正黑體;
+                    font-size:12px;
+                    font-weight:bolder;
+                    color:#4D4D4D;
+                    border-bottom:solid #D1D2D3 1px;
+                }
+                .list-table{  
+                    display:block;
+                    height:150px;
+                    border:none;
+                    text-align:center;
+                    border-collapse:collapse;
+                }
+                .list-title{     /*only list title border*/
+                    height:40px;
+                    border-collapse:collapse;
+                    border:none; 
+                    width:110%; 
+                    border-top-left-radius:25px;
+                    border-top-right-radius:5px;
+                    border-bottom-left-radius:10px;
+                    border-bottom-right-radius:5px;
+                    text-align:center;              
+                }
+                .plus{
+                    width:5%;
+                    border:none;
+                }
+                #list-openbutton{
+                    width:23px;
+                    height:23px;
+                }
+
+                /*****list table department year required*****/
+                td.l.department {
+                    background-color:#FFFFFF;
+                    width:25%;
+                    border:solid gray 1px;
+                }
+                td.l.year {
+                    background-color:#FFFFFF;
+                    width:15%;
+                    border:solid gray 1px;
+                }
+                td.l.required {
+                    background-color:#FFFFFF;
+                    width:15%;
+                    border:solid gray 1px;
+                }
+                
+                /************list class imformation************/ 
+                .list-line-2{
+                    width:10%;
+                }
+                .list-line-3{
+                    width:5%;
+                }
+                .list-line-4{
+                    width:30%;
+                }
+                .list-line-5{
+                    width:5%;
+                }
+                .list-line-6{
+                    width:10%;
+                }
+                .list-line-7{
+                    width:15%;
+                }
+
+            }
+            /*screen pixel 481-768px*/
+            @media screen and (min-width:481px) and (max-width:768px){
+                /********************title***********************/
+                #title-timetable{
+                    float:left;
+                    top:-12px;
+                    margin-left:80px;
+                    margin-right:0%;
+                    width:280px;
+                    min-width:30%;
+                    
+                    font-weight:bold;
+                    font-size:25px;
+                }
+                #title-search{
+                    float:left;
+                    width:20px;
+                    min-width:20px;
+                    margin-top:25px;
+                    line-height:15px;
+
+                    font-weight:1000;
+                    font-size:15px;
+                }
+                #title{
+                    font-family:Century Gothic,微軟正黑體;
+                    color:#363A42;
+                }
+                
+                /********************search***********************/               
+                #keyword-search{
+                    position:absolute;
+                    top:35px;
+                    left:420px;
+                    width:20%;
+                    min-width:25px;
+                    margin-right:1px;
+
+                    height:22px;
+                    border-radius:12px;
+                    border: #363A42 solid;               
+                }
+                #bt-search{
+                    float:left;
+                    position:absolute;
+                    top:30px;
+                    margin-left:26%;
+                    widows:30px;
+                    height:30px;
+                }
+
+                /********************credit-table***********************/
+                #credit-table{
+                    float:left;
+                    margin-left:75px;
+                    margin-right:3%;
+                    margin-top:-10px;
+                    margin-bottom:10px;
+                    width:85%;
+                    min-width:40%;
+
+                    font-size:15px;
+                    color:white; 
+                    text-align:center;
+                    border-collapse:collapse;
+                    font-family:微軟正黑體;
+                    border-collapse:separate;
+                    border-spacing:7px;
+                    font-weight:600;
+                }
+
+                /********************classtable***********************/
+                #ctct{
+                    float:left;
+                    width:85%;
+                    min-width:40%;                    
+                    margin-left:80px;
+                    margin-right:10px;
+                    margin-bottom:20px;
+
+                    border-style:none;                
+                    border-collapse:collapse;
+                    font-size:15px;
+                    font-family:微軟正黑體;
+                    text-align:center;              
+                }
+
+                /**********************list*********************/
+                #list-list{
+                    float:left;
+                    margin-left:45px;
+                    margin-right:10px;
+                    width:75%;
+            
+                    list-style-type:none;
+                    border:none;
+                }
+                td.l{
+                    border:none;
+                    padding:8px;
+                    border-bottom:solid #D1D2D3 1px;
+                    border-right:solid #D1D2D3 1px;
+                    font-family:微軟正黑體;
+                    font-size:12px;   
+                }
+                .list-scroll{
+                    overflow-y:scroll; 
+                    overflow-:scroll;
+                    background-color:white;
+                    width:110%;
+                    border-bottom-left-radius:10px;
+                    border-bottom-right-radius:5px; 
+                    border-top-left-radius:5px; 
+                }
+                .list-table-name{
+                    font-family:微軟正黑體;
+                    font-size:12px;
+                    font-weight:bolder;
+                    color:#4D4D4D;
+                    border-bottom:solid #D1D2D3 1px;
+                }
+                .list-table{  
+                    display:block;
+                    height:150px;
+                    border:none;
+                    text-align:center;
+                    border-collapse:collapse;
+
+                }
+                .list-title{     /*only list title border*/
+                    height:40px;
+                    border-collapse:collapse;
+                    border:none; 
+                    width:110%; 
+                    border-top-left-radius:25px;
+                    border-top-right-radius:5px;
+                    border-bottom-left-radius:10px;
+                    border-bottom-right-radius:5px;
+                    text-align:center;              
+                }
+                .plus{
+                    width:5%;
+                    border:none;
+                }
+                #list-openbutton{
+                    width:23px;
+                    height:23px;
+                }
+
+                /*****list table department year required*****/
+                td.l.department {
+                    background-color:#FFFFFF;
+                    width:25%;
+                    border:solid gray 1px;
+                }
+                td.l.year {
+                    background-color:#FFFFFF;
+                    width:15%;
+                    border:solid gray 1px;
+                }
+                td.l.required {
+                    background-color:#FFFFFF;
+                    width:15%;
+                    border:solid gray 1px;
+                }
+
+                /************list class imformation************/ 
+                .list-line-2{
+                    width:10%;
+                }
+                .list-line-3{
+                    width:5%;
+                }
+                .list-line-4{
+                    width:30%;
+                }
+                .list-line-5{
+                    width:5%;
+                }
+                .list-line-6{
+                    width:10%;
+                }
+                .list-line-7{
+                    width:15%;
+                }
+            }
+
+            /*screen pixel >=769px*/
+            @media screen and (min-width:769px){
+                /********************title***********************/
+                #title-timetable{
+                    float:left;
+                    top:-12px;
+                    margin-left:90px;
+                    margin-right:4.6%;
+                    min-width:40%;
+                }
+                #title-search{
+                    float:left;
+                    top:-12px;
+                }
+                #title{
+                    font-family:Century Gothic,微軟正黑體;
+                    font-weight:bold;
+                    font-size:25px;
+                    color:#363A42;
+                }
+                
+                /********************search***********************/               
+                #keyword-search{
+                    float:left;
+                    margin-bottom:70px;
+                    width:28%;
+                    height:25px;
+                    border-radius:12px;
+                    border: #363A42 solid;               
+                }
+                #bt-search{
+                    float:left;
+                    margin-top:0px;
+                    widows:30px;
+                    height:30px;
+                }
+
+                /********************credit-table***********************/
+                #credit-table{
+                    float:left;
+                    margin-left:85px;
+                    margin-right:5%;
+                    margin-top:-20px;
+                    margin-bottom:-10px;
+                    width:40%;
+                    min-width:40%;
+                    max-height:5px;
+
+                    font-size:15px;
+                    color:white; 
+                    text-align:center;
+                    border-collapse:collapse;
+                    font-family:微軟正黑體;
+                    border-collapse:separate;
+                    border-spacing:7px;
+                    font-weight:600;
+                }
+
+                /********************classtable***********************/
+                #ctct{
+                    float:left;
+                    width:40%;
+                    min-width:40%;                    
+                    /*margin-right:4%;*/
+                    margin-left:90px;
+                    margin-top:-0.2%;
+
+                    border-style:none;                
+                    border-collapse:collapse;
+                    font-size:15px;
+                    font-family:微軟正黑體;
+                    text-align:center;              
+                }
+
+                /**********************list*********************/
+                #list-list{
+                    float:left;
+                    margin-left:1.5%;
+                    margin-top:-0.5%;
+                    width:40%;
+                                       
+                    list-style-type:none;
+                    border:none;
+                }
+                td.l{
+                    border:none;
+                    padding:8px;
+                    border-bottom:solid #D1D2D3 1px;
+                    border-right:solid #D1D2D3 1px;
+                    font-family:微軟正黑體;
+                    font-size:12px;   
+                }
+                .list-scroll{
+                    overflow-y:scroll; 
+                    overflow-:scroll;
+                    background-color:white;
+                    width:110%;
+                    border-bottom-left-radius:10px;
+                    border-bottom-right-radius:5px; 
+                    border-top-left-radius:5px; 
+                }
+                .list-table-name{
+                    font-family:微軟正黑體;
+                    font-size:12px;
+                    font-weight:bolder;
+                    color:#4D4D4D;
+                    border-bottom:solid #D1D2D3 1px;
+                }
+                .list-table{  
+                    display:block;
+                    height:150px;
+                    border:none;
+                    text-align:center;
+                    border-collapse:collapse;
+                }
+                .list-title{     /*only list title border*/
+                    height:40px;
+                    border-collapse:collapse;
+                    border:none; 
+                    width:110%; 
+                    border-top-left-radius:25px;
+                    border-top-right-radius:5px;
+                    border-bottom-left-radius:10px;
+                    border-bottom-right-radius:5px;
+                    text-align:center;              
+                }
+                .plus{
+                    width:5%;
+                    border:none;
+                }
+                #list-openbutton{
+                    width:23px;
+                    height:23px;
+                }
+
+                /*****list table department year required*****/
+                td.l.department {
+                    background-color:#FFFFFF;
+                    width:25%;
+                    border:solid gray 1px;
+                }
+                td.l.year {
+                    background-color:#FFFFFF;
+                    width:15%;
+                    border:solid gray 1px;
+                }
+                td.l.required {
+                    background-color:#FFFFFF;
+                    width:15%;
+                    border:solid gray 1px;
+                }
+
+                /************list class imformation************/ 
+                .list-line-2{
+                    width:10%;
+                }
+                .list-line-3{
+                    width:5%;
+                }
+                .list-line-4{
+                    width:30%;
+                }
+                .list-line-5{
+                    width:5%;
+                }
+                .list-line-6{
+                    width:10%;
+                }
+                .list-line-7{
+                    width:15%;
+                }
+            }
+            /*************************************Basic Setting****************************************/
             body{
                 overflow-x:auto;
                 background-image: url('images/BG-01.png');
@@ -30,84 +579,38 @@
                 text-align:center;
             }           
             #goto-setting{
-                position:absolute;
+                float:left;
                 left:0px;
-                top:50px;
+                margin-top:80%;
                 widows:55px;
                 height:55px;
             }
             #goto-table{
-                position:absolute;
+                float:left;
+                margin-top:40%;
                 left:0px;
-                top:120px;
                 widows:55px;
                 height:55px;
             }
             #goto-share{
-                position:absolute;
+                float:left;
+                margin-top:40%;
                 left:0px;
-                top:190px;
                 widows:55px;
                 height:55px;
             } 
             #logout{
-                position:absolute;
+                /*position:absolute;*/
+                float:left;
+                margin-top:600%;
                 left:0px;
-                bottom:370px;
+                /*top:500px;
+                bottom:370px;*/
                 widows:55px;
                 height:55px;
             }
 
-            /********************title***********************/
-            #title-timetable{
-                position:absolute;
-                top:-12px;
-                left:100px;
-            }
-            #title-search{
-                position:absolute;
-                top:-12px;
-                left:800px;
-            }
-            #title{
-                font-family:Century Gothic,微軟正黑體;
-                font-weight:bold;
-                font-size:25px;
-                color:#363A42;
-            }
-            
-            /********************search***********************/
-            #keyword-search{
-                position:absolute;
-                top:45px;
-                left:800px;
-                border-radius:10px;
-                border:  #363A42 solid;                
-            }
-            #bt-search{
-                position:relative;
-                top:34px;
-                left:1160px;
-                widows:30px;
-                height:30px;
-            }
-
             /********************credit-table***********************/
-            #credit-table{
-                position:absolute;
-                top:50px;
-                left:100px;
-                width:40%;
-                font-size:15px;
-                color:white; 
-                text-align:center;
-                border-collapse:collapse;
-                font-family:微軟正黑體;
-                border-collapse:separate;
-                border-spacing:7px;
-                font-weight:600;
-            }
-
             td.credit-major{
                 background:#E25465;
                 padding:4px;
@@ -155,18 +658,6 @@
             }
 
             /********************classtable***********************/
-            #ctct{
-                position:absolute;
-                top:130px;
-                left:100px;
-                width:40%;               
-                border-style:none;                
-                border-collapse:collapse;
-                font-size:15px;
-                font-family:微軟正黑體;
-                text-align:center;              
-            }
-
             td.space{
                 empty-cells:show;
             }
@@ -196,7 +687,7 @@
             }
             col.line2{
                 width:50px;
-                word-wrap: break-word; /*自動斷行*/
+                word-wrap: break-word; 自動斷行
                 table-layout: fixed;
             }            
             .group{
@@ -232,72 +723,7 @@
             }
             .classblock [class*='N']]{
                 background-color:#F0F0F0;
-            }            
-
-
-
-
-            /**********************list*********************/
-            #list-list{
-                position:absolute;
-                left:760px;
-                top:120px;               
-                list-style-type:none;
-                border:none;
-            }
-            td.l{
-                /*width:80px;*/
-                border:none;
-                padding:8px;
-                border-bottom:solid #D1D2D3 1px;
-                border-right:solid #D1D2D3 1px;
-                font-family:微軟正黑體;
-                font-size:12px;   
-            }
-            .list-scroll{
-                overflow-y:scroll; 
-                overflow-:scroll;
-                background-color:white;
-                width:670px;
-                border-bottom-left-radius:10px;
-                border-bottom-right-radius:5px; 
-                border-top-left-radius:5px; 
-            }
-            .list-table-name{
-                font-family:微軟正黑體;
-                font-size:12px;
-                font-weight:bolder;
-                color:#4D4D4D;
-                border-bottom:solid #D1D2D3 1px;
-            }
-            .list-table{  
-                display:block;
-                height:150px;
-                border:none;
-                text-align:center;
-                border-collapse:collapse;
-
-            }
-            .list-title{     /*only list title border*/
-                height:40px;
-                border-collapse:collapse;
-                border:none; 
-                width:670px; 
-                /*background-color:#E25465;*/
-                border-top-left-radius:25px;
-                border-top-right-radius:5px;
-                border-bottom-left-radius:10px;
-                border-bottom-right-radius:5px;
-                text-align:center;              
-            }
-            .plus{
-                width:5%;
-                border:none;
-            }
-            #list-openbutton{
-                width:23px;
-                height:23px;
-            }
+            }  
 
             /********list table first block type********/
             li.major td.l.type {
@@ -355,7 +781,6 @@
                 width:8%;
             }
 
-
             /*****list table plus*****/
             td.plus {
                 background-color:#E25465;
@@ -403,23 +828,6 @@
                 border-bottom-right-radius:5px;
             }
 
-            /*****list table department year required*****/
-            td.l.department {
-                background-color:#FFFFFF;
-                width:25%;
-                border:solid gray 1px;
-            }
-            td.l.year {
-                background-color:#FFFFFF;
-                width:15%;
-                border:solid gray 1px;
-            }
-            td.l.required {
-                background-color:#FFFFFF;
-                width:15%;
-                border:solid gray 1px;
-            }
-
             /************list add class botton************/ 
             li.major .list-line-1{
                 background-color:#E25465;
@@ -457,35 +865,20 @@
                 background-color:#9876EA;
                 width:11%;
             }
-            /************list class imformation************/ 
-            .list-line-2{
-                width:10%;
-            }
-            .list-line-3{
-                width:5%;
-            }
-            .list-line-4{
-                width:30%;
-            }
-            .list-line-5{
-                width:5%;
-            }
-            .list-line-6{
-                width:10%;
-            }
-            .list-line-7{
-                width:15%;
-            }
+    
+            /****************other****************/
+            a:hover {cursor:pointer;}
 
         </style>
     </head>
 
     <body id="wsy" v-on:click="a">
         <div id='tools'>
-           <p><a href="../personal-setting/personal.html"><img id='goto-setting' src='images\button\tools_button-06.png'></a></p>
-           <p><a href="#"><img id='goto-table' src='images\button\tools_button-07.png'></a></p>
-           <p><a href="#"><img id='goto-share' src='images\button\tools_button-08.png'></a></p>
-           <p><a href="../login/login.html"><img id='logout' src='images\button\tools_button-09.png'></a></p> 
+           <p><a href="../personal-setting/personal.html" data-toggle='tap' >
+            <img id='goto-setting' src='images\button\tools_button-06.png'></a></p>
+           <p><a href="#" data-toggle='tap' ><img id='goto-table' src='images\button\tools_button-07.png'></a></p>
+           <p><a href="#" data-toggle='tap' ><img id='goto-share' src='images\button\tools_button-08.png'></a></p>
+           <p><a href="../login/login.html" data-toggle='tap' ><img id='logout' src='images\button\tools_button-09.png'></a></p> 
         </div><!--tools end -->
        
 
@@ -494,9 +887,25 @@
             <p id='title-search'>FIND CLASS</p>
         </div><!--title end -->
 
-        <div id='search'>
+        <div id='credit'>
+            <table id='credit-table'>
+                <tr><td class='credit-major'>主修O/O學分</td>
+                    <td class='credit-dbmajor'>雙主O/O學分</td>
+                    <td class='credit-minoer'>輔系O/O學分</td>
+                    <td class='credit-outside'>系外O/O學分</td>
+                    <td class='credit-program'>學程O/O學分</td></tr>                       
+                <tr><td class='credit-general'>通識O/O學分</td>
+                    <td class='credit-seclan'>二外O/O學分</td>
+                    <td class='credit-chineseenglish'>基礎O/O學分</td>
+                    <td class='credit-pe'>體育O/O學分</td>                    
+                    <td other='credit-other'></td></tr>
+            </table>
+            <br><br>
+        </div>
+
+        <div class='search'>
             <form>
-                <input type='search' id='keyword-search' name='keyword' placeholder='｜ SEARCH' size='50'>
+                <input type='search' id='keyword-search' name='keyword' placeholder='｜ SEARCH' >
                 <input type='image' id='bt-search' src='images\button\bt-search-10.png' alt='bt-search-10.png'>
             </form>
         </div><!--search end -->
@@ -538,27 +947,13 @@
             </table>
         </div>
 
-        <div id='credit'>
-            <table id='credit-table'>
-                <tr><td class='credit-major'>主修O/O學分</td>
-                    <td class='credit-dbmajor'>雙主O/O學分</td>
-                    <td class='credit-minoer'>輔系O/O學分</td>
-                    <td class='credit-outside'>系外O/O學分</td>
-                    <td class='credit-program'>學程O/O學分</td></tr>                       
-                <tr><td class='credit-general'>通識O/O學分</td>
-                    <td class='credit-seclan'>二外O/O學分</td>
-                    <td class='credit-chineseenglish'>基礎O/O學分</td>
-                    <td class='credit-pe'>體育O/O學分</td>                    
-                    <td other='credit-other'></td></tr>
-            </table>
-        </div>
-
         <div id='list'>
             <ul id='list-list'>
             <li v-for="item in listname" :class="item.name" >
                    <table class='list-title' border='1'>
                        <tr><td class='l' :class="n.name" v-for="n in classname">1</td>
-                        <td class='plus' v-on:click="showhide"><img id='list-openbutton' src='images\list-openbutton-14.png'></td></tr>
+                        <td class='plus' v-on:click="showhide">
+                            <img id='list-openbutton' src='images\list-openbutton-14.png'></td></tr>
                    </table>
                    <div class='list-scroll'>
                        <table class='list-table hide' border='1'>
@@ -579,7 +974,8 @@
                             </thead>
                             <tbody style="table-layout: scroll;">
                                 <tr v-for="n in 10">
-                                    <td class='class-plus'><a href='#'><img id='list-openbutton' src='images\list-plusbutton-14-15.png'></a></td>
+                                    <td class='class-plus'><a href='#'>
+                                        <img id='list-openbutton' src='images\list-plusbutton-14-15.png'></a></td>
                                     <td class='l'  v-for="n in tdclassname" :class="n.name">${ n.name }</td></tr>
                             </tbody>
                             
@@ -589,95 +985,96 @@
                 </li>
             </ul>           
         </div>
-    </body>
-    <script>
-       $(".hide").hide();
-        table= new Vue({
-            el:"#classtable",
-            delimiters: ['${', '}'],
-            data:{
-                tabletime:[
-                    {session:'0'},
-                    {session:'1'},
-                    {session:'2'},
-                    {session:'3'},
-                    {session:'4'},
-                    {session:'N'},
-                    {session:'5'},
-                    {session:'6'},
-                    {session:'7'},
-                    {session:'8'},
-                    {session:'9'},
-                    {session:'A'},
-                    {session:'B'},
-                    {session:'C'},
-                    {session:'D'},    
-                ], 
-
-                      
-            }
-         })
-
-         list=new Vue({
-             el:"#list",
-             delimiters: ['${', '}'],
-             data:{
-                 listname:[
-                     {name:'major'},
-                     {name:'dbmajor'},
-                     {name:'minoer'},
-                     {name:'general'},
-                     {name:'seclan'},
-                     {name:'pe'},
-                     {name:'chineseenglish'},
-                     {name:'outside'},
-                     {name:'program'},
-                 ],
-                
-                classname:[
-                    {name:'type'},
-                    {name:'department'},
-                    {name:'year'},
-                    {name:'required'},
-                ],
-                tdclassname:[
-                    {name:'td-index'},
-                    {name:'td-grade'},
-                    {name:'td-subject'},
-                    {name:'td-credit'},
-                    {name:'td-teacher'},
-                    {name:'td-timeroom'},
-
-                ]     
-
-             },
-             methods:{
-                showhide:function(event){
-
-                    target=event.currentTarget;
-                    cur=$(target).parent().parent().parent().next().children().attr('class');
-                    mark=cur.slice(11,15);
-                    if(mark=="hide"){
-                        $(target).parent().parent().parent().next().children().removeClass("hide");
-                        $(target).parent().parent().parent().next().children().addClass("show");
-                    }
-                    else if(mark=="show")
-                    {
-                        $(target).parent().parent().parent().next().children().removeClass("show");
-                        $(target).parent().parent().parent().next().children().addClass("hide");
-                    }
-                    $(".hide").hide();
-                    $(".show").show();
-                    
-                }
-             },
-            
-         })
+         
         
-     </script>
-     
 
+        <script>
+           $(".hide").hide();
+            table= new Vue({
+                el:"#classtable",
+                delimiters: ['${', '}'],
+                data:{
+                    tabletime:[
+                        {session:'0'},
+                        {session:'1'},
+                        {session:'2'},
+                        {session:'3'},
+                        {session:'4'},
+                        {session:'N'},
+                        {session:'5'},
+                        {session:'6'},
+                        {session:'7'},
+                        {session:'8'},
+                        {session:'9'},
+                        {session:'A'},
+                        {session:'B'},
+                        {session:'C'},
+                        {session:'D'},    
+                    ], 
 
+                          
+                }
+             })
+
+             list=new Vue({
+                 el:"#list",
+                 delimiters: ['${', '}'],
+                 data:{
+                     listname:[
+                         {name:'major'},
+                         {name:'dbmajor'},
+                         {name:'minoer'},
+                         {name:'general'},
+                         {name:'seclan'},
+                         {name:'pe'},
+                         {name:'chineseenglish'},
+                         {name:'outside'},
+                         {name:'program'},
+                     ],
+                    
+                    classname:[
+                        {name:'type'},
+                        {name:'department'},
+                        {name:'year'},
+                        {name:'required'},
+                    ],
+                    tdclassname:[
+                        {name:'td-index'},
+                        {name:'td-grade'},
+                        {name:'td-subject'},
+                        {name:'td-credit'},
+                        {name:'td-teacher'},
+                        {name:'td-timeroom'},
+
+                    ]     
+
+                 },
+                 methods:{
+                    showhide:function(event){
+
+                        target=event.currentTarget;
+                        cur=$(target).parent().parent().parent().next().children().attr('class');
+                        mark=cur.slice(11,15);
+                        if(mark=="hide"){
+                            $(target).parent().parent().parent().next().children().removeClass("hide");
+                            $(target).parent().parent().parent().next().children().addClass("show");
+                        }
+                        else if(mark=="show")
+                        {
+                            $(target).parent().parent().parent().next().children().removeClass("show");
+                            $(target).parent().parent().parent().next().children().addClass("hide");
+                        }
+                        $(".hide").hide();
+                        $(".show").show();
+                        
+                    }
+                 },
+                
+             })
+            
+         </script>
+
+        
     </body>
 
 </html>
