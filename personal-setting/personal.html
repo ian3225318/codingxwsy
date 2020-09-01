@@ -3,7 +3,7 @@
     <head>
         <title>NCKU WSY</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet"> -->
         <link rel="stylesheet" href="css/style.css">  <!-- <自己寫的放在最下面> -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -17,7 +17,8 @@
                 background-size:cover;
                 background-repeat:repeat;
                 overflow-x:hidden;
-                overflow-y:hidden 
+                overflow-y:hidden; 
+                font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
             }
            /* ---tools--- */
             #tools{
@@ -74,7 +75,8 @@
                 left: 75px;
                 top: 285px;
                 background: #3C3C3C;color: white;padding: 10px 20px;border-radius: 30px;
-                width:250px
+                width:250px;
+                font-family:Century Gothic,微軟正黑體;
             }
             #circle-1{
                 width: 60px;
@@ -117,21 +119,27 @@
                 color: white;
                 width: 100px;
                 height: 35px;
-                border-radius: 30px
+                border-radius: 30px;
+                text-align:center;
+                font-family:Century Gothic,微軟正黑體;
             }
             #user_idnew{
                 background:	#3C3C3C;
                 color: white;
                 width: 100px;
                 height: 35px;
-                border-radius: 30px
+                border-radius: 30px;
+                text-align:center;
+                font-family:Century Gothic,微軟正黑體;
             }
             #user_pwd{
                 background:	#3C3C3C;
                 color: white;
                 width: 100px;
                 height: 35px;
-                border-radius: 30px
+                border-radius: 30px;
+                text-align:center;
+                font-family:Century Gothic,微軟正黑體;
             }
             #major_name{
                 background:	#3C3C3C;
@@ -139,16 +147,21 @@
                 width: 100px;
                 height: 35px;
                 border-radius: 30px;
+                text-align:center;
+                font-family:Century Gothic,微軟正黑體;
             }
             #major-sel{
-                border-radius: 30px;width: 250px;height: 35px;
+                border-radius: 30px;
+                width: 250px;
+                height: 35px;
             }
             #system-sel{
                 background:	#3C3C3C;
                 color: white;
                 width: 100px;
                 height: 35px;
-                border-radius: 30px
+                border-radius: 30px;
+                
             }
             #department-sel{
                 border-radius: 30px;width: 250px;height: 35px;
@@ -183,8 +196,6 @@
                 width: 250px;
                 height: 35px;
             }
-
-            
         </style>
     </head>
 
@@ -203,11 +214,11 @@
                     <div  class="col-lg-7">
                         <section style="position: relative;top:45px">
                         <img id='bighead'src='images/setting-item-12.png' >
-                        <a id='changebtn'class='btn' href='#' >CHANGE IMAGE</a>
-                        <a href="#"><img id="circle-1" src='images/bear.png' ></a>
-                        <a href="#"><img id="circle-2" src='images/item-thrmonster.png'></a>
-                        <a href="#"><img id="circle-3" src='images/image-space-3.png'></a>    
-                        <a href="#"><img id="circle-4" src='images/image-space-4.png'></a>
+                        <a id='changebtn'class='btn' href='#' onclick="change()" >CHANGE IMAGE</a>
+                        <a href="#"><img id="circle-1" src='images/setting-item-12.png' onclick="change2()" ></a>
+                        <a href="#"><img id="circle-2" src='images/item-thrmonster.png' onclick="change3()"></a>
+                        <a href="#"><img id="circle-3" src='images/bear.png' onclick="change4()"></a>    
+                        <a href="#"><img id="circle-4" src='images/daisy.png' onclick="change5()"></a>
                         </section>
                         
                     </div>
@@ -231,18 +242,18 @@
                                     <div class='form-group'>
                                         <label for='major_name' id='major_name' >MAJOR</label>
                                         <select id="major-sel" class='major-sel' >
-                                            <option value="">請選擇科系</option>
+                                            <option value="">---請選擇科系---</option>
                                             <option :value="item.name" v-for="item in department">${ item.name }</option>
                                         </select>
                                     </div>
                                     <div class="form-group">  
                                     <select  v-model="goat1" id="system-sel" class='system-sel'>
-                                        <option value="">-學制-</option>
+                                        <option value="">---學制---</option>
                                         <option :value="item.value" v-for="item in choice">${ item.name }</option>
                                         
                                     </select>
                                     <select id="department-sel" class='department-sel'>
-                                            <option value="">請選擇科系</option>
+                                            <option value="">---請選擇科系---</option>
                                             <option :value="item.name" v-if="goat1==='program'" v-for="item in program">${ item.name }</option>
                                             <option :value="item.name" v-else v-for="item in department">${ item.name }</option>
                                     </select>
@@ -250,11 +261,11 @@
 
                                     <div class="form-group">  
                                         <select v-model="goat2" id="system-sel" class='system-sel'>
-                                            <option value="">-學制-</option>
+                                            <option value="">---學制---</option>
                                             <option :value="item.value" v-for="item in choice">${ item.name }</option>
                                         </select>
                                         <select id="department-sel" class='major-sel'>
-                                            <option value="">請選擇科系</option>
+                                            <option value="">---請選擇科系---</option>
                                             <option :value="item.name" v-if="goat2==='program'" v-for="item in program">${ item.name }</option>
                                             <option :value="item.name" v-else v-for="item in department">${ item.name }</option>
                                         </select>
@@ -286,6 +297,28 @@
 
     </body>
     <script>
+        var imgobjs;
+        function change2()
+        {
+            imgobjs = "images/setting-item-12.png";
+        }
+        function change3()
+        {
+            imgobjs = "images/item-thrmonster.png";
+        }
+        function change4()
+        {
+            imgobjs = "images/bear.png";
+        }
+        function change5()
+        {
+            imgobjs = "images/daisy.png";
+        }
+        function change()
+        {
+            document.getElementById('bighead').src = imgobjs;
+        }
+   
         personal=new Vue({
             el:"#personal",
             delimiters: ['${', '}'],
