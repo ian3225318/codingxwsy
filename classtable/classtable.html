@@ -8,7 +8,10 @@
         <style>
 
             /*screen pixel <=480px*/
-            @media screen and (max-width:480px){
+            @media only screen and (max-device-width:480px) and (-webkit-min-device-pixel-ratio:2){
+                body{
+                    background-color: black;
+                }
                 /********************title***********************/
                 #title-timetable{
                     float:left;
@@ -195,7 +198,7 @@
 
             }
             /*screen pixel 481-768px*/
-            @media screen and (min-width:481px) and (max-width:768px){
+            @media only screen and (min-device-width:481px) and (max-device-width:768px){
                 /********************title***********************/
                 #title-timetable{
                     float:left;
@@ -382,7 +385,7 @@
             }
 
             /*screen pixel >=769px*/
-            @media screen and (min-width:769px){
+            @media (min-device-width:769px){
                 /********************title***********************/
                 #title-timetable{
                     float:left;
