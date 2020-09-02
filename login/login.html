@@ -11,128 +11,69 @@
 
         <style type='text/css'>
             @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&family=Open+Sans:ital,wght@1,300&display=swap");
-            *{
-                margin:0;
-                padding:0;
-                List-style: none;
-            }
-            .login{
-                width: 600px;
-                height: 400px;
-                background-color: rgba(0,0,0,0);
-                border-radius:10px;
-                border:10px 
-            }
-            .form{
-                font-family:Century Gothic,微軟正黑體; 
-            }
-            .card-rounded-lg-text-dark{
-                background: #3C3C3C;
-                border-radius:30px;
-                height: 400px;
-                position: relative;
-                top: 100;
-            }
+
             body{
                 background-image: url( 'pictures/BG-01.jpg' );
                 background-size: contain;
                 overflow-x:hidden;
-                overflow-y:hidden 
+                overflow-y:hidden;
             }
-            .form{
-                position: relative;
-                top: 80px;
-                left: -50px
-            }
-            #user_id{
-                position: relative;
-                left: 50px;
-                width: 300px;
-                
-            }
-            #user_pwd{
-                position: relative;
-                left: 50px;
-                width: 300px;
-            }
-            a{text-decoration:none; color:seashell;position: relative;left:40px}
-            a:hover{text-decoration:underline;color: skyblue;}
 
-            .btnin{
-                background: #FF9797;
-                color: white;
-                padding: 2px 40px;
-                border-radius: 60px
-            }
-            .btnsignup{
-                background:	#80FFFF	;
-                color: white;
-                padding: 2px 40px;
-                border-radius: 60px
-            }
+            /*****************Left part animation*****************/
             #cutehead{
-                width: 500px;
-                height: 500px;
-                position: relative;
-                left: 150px;
-                top: 50px;
-            }
-            .login{
-                position: relative;
-                left: 50px;
-                top: -20px
-            }
-            #signinname{
-                color:white;
-                position: relative;
-                left: 120px
-            }
-            .btnsection{
-                position: relative;
-                left: 30px;
-            }
-            .btn-group{
-                position: relative;
-                left: 8px
-            }
+                float:left;
+                margin-left:20%;
+                margin-bottom:20%;
+                top:25%;
+                width: 550px;
+                height: 550px;
+            }            
+
+
         </style>
+
        <title>多元選課wsy</title>
     </head>
 
     <body>
         
-        <section id='intro'>
-    
+        <section id='intro'>    
                 <div class="row">
                     <div  class="col-md-7">
-                        <img id='cutehead' src='pictures/loginpage-11_1.png'>
+                        <img id='cutehead' src='pictures/loginpage-1.png'>
                     </div>
+
                     <div  class="col-md-4">
                         <div class="card-rounded-lg-text-dark"> 
                                 <div class='login'>
-                                <form class='form'>
-                                    <h1 id='signinname'>SIGN  IN</h1>
-                                    <div class="form-group" >
-                                        <label for="user_id"></label>
-                                        <input type="text" name="" id="user_id" placeholder="account name" required>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label for="user_pwd"></label>
-                                        <input type="password" name="" id="user_pwd" placeholder="password" required>
-                                    </div>
-                                    <br>
-                                    <div class='btnsection'>
-                                    <div class="btn-group">
-                                        <button class="btnin">L O G I N</button>
-                                    </div>
-                                    <div class="btn-group">
-                                        <button class="btnsignup">S I G N U P </button>
-                                    </div>
-                                    </div>
-                                    <br>
-                                    <a href="#"> Forgot your password ?</a>
-                                </form>
+                                    <form class='form'>
+                                        <h1 id='signinname'>SIGN IN</h1>
+                                        <div class="form-group" >
+                                            <label for="user_id"></label>
+                                            <input type="text" name="" id="user_id" placeholder="account name" required>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="user_pwd"></label>
+                                            <input type="password" name="" id="user_pwd" placeholder="password" required>
+                                        </div>
+
+                                        <br>
+
+                                        <div class='btnsection'>
+                                            <div class="btn-group">
+                                                <button class="btnin">L O G I N</button>
+                                            </div>
+
+                                            <div class="btn-group">
+                                                <button class="btnsignup">S I G N U P </button>
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                        <a href="#"> Forgot your password ?</a>
+                                    </form>
                                 </div>
                         </div>
                     <div _ngcontent-qgw-c72="" class="col-md-1"> 
