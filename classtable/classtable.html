@@ -667,7 +667,7 @@
                 font-weight:800px;
                 background:#363A42;                
                 border:solid #363A42 0px;
-                border-top-right-radius:15px;
+                /*border-top-right-radius:15px;*/
                 border-top-left-radius:15px;
             }
             select.semester-num{
@@ -681,6 +681,22 @@
                 padding-bottom:0.8px;
                 text-align-last:center;
                 font-family:Century Gothic,微軟正黑體;
+            }
+            .reset-but{
+                border:none;
+                background:none;
+                color:white;
+
+                padding-right:10%;
+                padding-left:10%;
+                padding-top:10%;
+                padding-top:10%;
+                
+            }
+            .semeater-reset-block{
+                background:#656C7B;
+                border:none;
+                border-top-right-radius:15px;
             }
             col.line1{
                 width:5px;
@@ -901,12 +917,13 @@
                     <td other='credit-other'></td></tr>
             </table>
             <br><br>
-        </div>
+        </div><!--credit end -->
 
         <div class='search'>
             <form>
-                <input type='search' id='keyword-search' name='keyword' placeholder='｜ SEARCH' >
-                <input type='image' id='bt-search' src='images\button\bt-search-10.png' alt='bt-search-10.png'>
+                <td><input type='search' id='keyword-search' name='keyword' placeholder='｜ SEARCH' ></td>
+                <td><input type='image' id='bt-search' src='images\button\bt-search-10.png' 
+                    alt='bt-search-10.png'></td>
             </form>
         </div><!--search end -->
 
@@ -918,7 +935,7 @@
                 </colgroup>
                 <thead>
                     <tr class='semester'>
-                        <td colspan='8' class='semester-title'>SEMESTER   
+                        <td colspan='7' class='semester-title'>SEMESTER   
                             <select name='semester-num' class='semester-num'>
                                 <option value='109-1' selected>109-1</option>
                                 <option value='109-2'>109-2</option>
@@ -926,6 +943,10 @@
                                 <option value='110-2'>110-2</option>
                             </select>
                         </td>
+                        <td class='semeater-reset-block'>
+                            <button type='reset-but' class='reset-but'>RESET</button>
+                        </td>
+                        
 
 
                     </tr>
