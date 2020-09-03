@@ -1,102 +1,177 @@
 <html>
 
     <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">  <!-- <自己寫的放在最下面> -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-       
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style type='text/css'>
             @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&family=Open+Sans:ital,wght@1,300&display=swap");
-            *{
-                margin:0;
-                padding:0;
-                List-style: none;
-            }
-            .login{
-                width: 600px;
-                height: 400px;
-                background-color: rgba(0,0,0,0);
-                border-radius:10px;
-                border:10px 
-            }
-            .form{
-                font-family:'Noto Sans TC',sans-serif; 
-            }
-            .card-rounded-lg-text-dark{
-                background: #3C3C3C;
-                border-radius:30px;
-                height: 500px;
-                position: relative;
-                top: 60;
-            }
+
             body{
                 background-image: url( 'pictures/BG-01.jpg' );
                 background-size: contain;
                 overflow-x:hidden;
-                overflow-y:hidden 
+                /*overflow-y:hidden;*/
             }
-            .form{
-                position: relative;
-                top: 80px;
-                left: -50px
+            @media only screen and (min-width:0px) and (max-width:849px){
+                .col-md-7{
+                    float:left;
+                    margin-top:-5%;
+                }
+                #cutehead{
+                    float:left;
+                    margin-left:10%;
+                    margin-right:10%;
+
+                    max-width:80%;
+                    max-height:80%;
+                    min-width:400px;
+                    min-height:400px;
+                    width:auto;
+                    height:auto;
+                }
+                .col-md-4{
+                    float:left;
+                    width:100%;
+                    margin-bottom:20%;            
+                }   
+                .login{
+                    float:left;
+                    max-height:600px;
+                    margin-left:20%;                
+                }
+            }            
+            @media only screen and (min-width:850px) and (max-width:1199px){
+                .col-md-7{
+                    float:left;
+                    width:50%;
+                    height:100%;
+                    margin-right:3%;
+                }
+                #cutehead{
+                    float:left;
+                    margin-top:45px;
+                    margin-bottom:10%;
+
+                    max-width:80%;
+                    max-height:80%;
+                    min-width:600px;
+                    min-height:600px;
+                    width:auto;
+                    height:auto;
+                }
+                .col-md-4{
+                    float:left;
+                    width:45%;
+                    height:100%;             
+                }   
+                .login{
+                    float:left;
+                    margin-top:140px;
+                    margin-bottom:15%;
+                    margin-left:10%;
+                    margin-right:0%;                
+                }
+            }
+            @media only screen and (min-width:1200px){
+                .col-md-7{
+                    float:left;
+                    width:50%;
+                    height:100%;
+                    margin-right:3%;
+                }
+                #cutehead{
+                    float:left;
+                    margin-top:45px;
+                    margin-left:25%;
+                    margin-bottom:10%;
+
+                    max-width:80%;
+                    max-height:80%;
+                    min-width:600px;
+                    min-height:600px;
+                    width:auto;
+                    height:auto;
+                }
+                .col-md-4{
+                    float:left;
+                    width:45%;
+                    height:100%;             
+                }   
+                .login{
+                    float:left;
+                    margin-top:140px;
+                    margin-bottom:15%;
+                    margin-left:10%;
+                    margin-right:20%;
+                }
+            }
+
+            /**********************BASIC SETTING**********************/
+            /*****************Right part Login block*****************/  
+            .login{
+                border-radius:30px;
+                width:60%;
+                min-width:300px;
+                height:60%;              
+
+                font-family:Century Gothic,微軟正黑體; 
+                text-align:center;
+                background: #3C3C3C;
+            }        
+
+            /*****************form setting*****************/            
+            .btnnext{
+                background: #00E5FF ;
+                color: white;
+                padding:4px;
+                border:solid 2px #4F4F4F;
+                border-radius:100px;
+                width:64%;
+                min-width:120px;
+                font-size:18px;
             }
             #user_id{
                 position: relative;
-                left: 50px;
-                width: 300px;
-                
+                width:64%;
+                min-width:240px;
+                height:35px;
+                font-size:15px;
+                border-radius:80px;
+                border:solid 2px #4F4F4F;
             }
             #user_pwd{
                 position: relative;
-                left: 50px;
-                width: 300px;
+                width:64%;
+                min-width:240px;
+                height:35px;
+                font-size:15px;
+                border-radius:80px;
+                border:solid 2px #4F4F4F;
             }
             #user_pwdag{
                 position: relative;
-                left: 50px;
-                width: 300px;
+                width:64%;
+                min-width:240px;
+                height:35px;
+                font-size:15px;
+                border-radius:80px;
+                border:solid 2px #4F4F4F;
+                margin-bottom:30px;
             }
+            #signupname{
+                position: relative;
+                font-size:50px;
+                color:white;
+                text-align:center;
+                padding-top:8px;
+                margin-bottom:25px;
+            }
+
             a{text-decoration:none; color:seashell;position: relative;left:40px}
             a:hover{text-decoration:underline;color: skyblue;}
 
-            
-       
-            #cutehead{
-                width: 500px;
-                height: 500px;
-                position: relative;
-                left: 150px;
-                top: 50px;
-            }
-            .login{
-                position: relative;
-                left: 50px;
-                top: -20px
-            }
-            #signupname{
-                color:white;
-                position: relative;
-                left: 120px
-            }
-   
-            .btn-group{
-                position: relative;
-                left: 8px
-            }
-            .btnnext{
-                position: relative;
-                left:120px;
-                background:	#80FFFF	;
-                color: white;
-                padding: 2px 40px;
-                border-radius: 60px
-            }
         </style>
-       <title>多元選課wsy</title>
+
+       <title>NCKU WSY</title>
     </head>
 
     <body>
@@ -105,30 +180,32 @@
     
                 <div class="row">
                     <div  class="col-md-7">
-                        <img id='cutehead' src='pictures/loginpage-11_1.png'>
+                        <img id='cutehead' src='pictures/loginpage-1.png'>
                     </div>
                     <div  class="col-md-4">
                         <div class="card-rounded-lg-text-dark"> 
                                 <div class='login'>
-                                <form class='form'>
-                                    <h1 id='signupname'>SIGN UP</h1>
-                                    <div class="form-group">
-                                        <label for="user_idnew"></label>
-                                        <input type="text" name="" id="user_id" placeholder="account name" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="user_pwd"></label>
-                                        <input type="password" name="" id="user_pwd" placeholder="password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="user_pwdag"></label>
-                                        <input type="password" name="" id="user_pwdag" placeholder="password again" required>
-                                    </div>
-                                    <div class="btn-group">
-                                        <button class="btnnext">N E X T </button>
-                                    </div>
-                                    
-                                </form>
+                                    <form class='form'>
+                                        <h1 id='signupname'>SIGN UP</h1>
+                                        <div class="form-group">
+                                            <label for="user_idnew"></label>
+                                            <input type="text" name="" id="user_id" placeholder="   Account name" required>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="user_pwd"></label>
+                                            <input type="password" name="" id="user_pwd" placeholder="   Password" required>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="user_pwdag"></label>
+                                            <input type="password" name="" id="user_pwdag" placeholder="   Password again" required>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button class="btnnext">N E X T </button>
+                                        </div>
+                                        
+                                    </form>
                                 </div>
                         </div>
                     <div _ngcontent-qgw-c72="" class="col-md-1"> 
