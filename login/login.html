@@ -1,14 +1,6 @@
 <html>
 
     <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet"> -->
-        <link rel="stylesheet" href="css/style.css">  <!-- <自己寫的放在最下面> -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-       
-
         <style type='text/css'>
             @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&family=Open+Sans:ital,wght@1,300&display=swap");
 
@@ -16,23 +8,172 @@
                 background-image: url( 'pictures/BG-01.jpg' );
                 background-size: contain;
                 overflow-x:hidden;
-                overflow-y:hidden;
+                /*overflow-y:hidden;*/
+            }
+            @media only screen and (min-width:0px) and (max-width:989px){
+                .col-md-7{
+                    float:left;
+                    margin-top:-5%;
+                }
+                #cutehead{
+                    float:left;
+                    margin-left:10%;
+                    margin-right:10%;
+
+                    max-width:80%;
+                    max-height:80%;
+                    min-width:500px;
+                    min-height:500px;
+                    width:auto;
+                    height:auto;
+                }
+                .col-md-4{
+                    float:left;
+                    width:100%;
+                    margin-bottom:20%;            
+                }   
+                .login{
+                    float:left;
+                    max-height:600px;
+                    margin-left:20%;                
+                }
+            }
+            
+            @media only screen and (min-width:990px) and (max-width:1199px){
+                .col-md-7{
+                    float:left;
+                    width:50%;
+                    height:100%;
+                    margin-right:3%;
+                }
+                #cutehead{
+                    float:left;
+                    margin-top:75px;
+                    margin-left:0%;
+
+                    max-width:80%;
+                    max-height:80%;
+                    min-width:700px;
+                    min-height:700px;
+                    width:auto;
+                    height:auto;
+                }
+                .col-md-4{
+                    float:left;
+                    width:45%;
+                    height:100%;             
+                }   
+                .login{
+                    float:left;
+                    margin-top:180px;
+                    margin-bottom:15%;
+                    margin-left:10%;
+                    margin-right:0%;                
+                }
+            }
+            @media only screen and (min-width:1200px){
+                .col-md-7{
+                    float:left;
+                    width:50%;
+                    height:100%;
+                    margin-right:3%;
+                }
+                #cutehead{
+                    float:left;
+                    margin-top:75px;
+                    margin-left:25%;
+
+                    max-width:80%;
+                    max-height:80%;
+                    min-width:700px;
+                    min-height:700px;
+                    width:auto;
+                    height:auto;
+                }
+                .col-md-4{
+                    float:left;
+                    width:45%;
+                    height:100%;             
+                }   
+                .login{
+                    float:left;
+                    margin-top:180px;
+                    margin-bottom:15%;
+                    margin-left:10%;
+                    margin-right:20%;
+                }
             }
 
-            /*****************Left part animation*****************/
-            #cutehead{
-                float:left;
-                margin-left:20%;
-                margin-bottom:20%;
-                top:25%;
-                width: 550px;
-                height: 550px;
-            }            
+            /**********************BASIC SETTING**********************/
+            /*****************Right part Login block*****************/  
+            .login{
+                border-radius:30px;
+                width:60%;
+                min-width:300px;
+                height:60%;              
 
+                font-family:Century Gothic,微軟正黑體; 
+                text-align:center;
+                background: #3C3C3C;
+            }        
+
+            /*****************form setting*****************/            
+            .btnin{
+                background: #FF9797;
+                color: white;
+                padding:4px;
+                border:solid 2.5px #4F4F4F;
+                border-radius:100px;
+                width:32%;
+                min-width:120px;
+                font-size:20px;
+            }
+            .btnsignup{
+                background: #00E5FF ;
+                color: white;
+                padding:4px;
+                border:solid 2.5px #4F4F4F;
+                border-radius:100px;
+                width:32%;
+                min-width:120px;
+                font-size:20px;
+            }
+            .forget{
+                font-size:20px;
+                left:-2px;
+            }
+            #user_id{
+                position: relative;
+                width:64%;
+                min-width:240px;
+                border-radius:80px;
+                height:40px;
+                font-size:15px;
+            }
+            #user_pwd{
+                position: relative;
+                width:64%;
+                min-width:240px;
+                border-radius:80px;
+                height:40px;
+                font-size:15px;
+                margin-bottom:20px;
+            }
+            #signinname{
+                position: relative;
+                font-size:50px;
+                color:white;
+                text-align:center;
+                padding-top:30px;
+                padding-bottom:10px;
+            }
+
+            a{text-decoration:none; color:seashell;position: relative;left:40px}
+            a:hover{text-decoration:underline;color: skyblue;}
 
         </style>
 
-       <title>多元選課wsy</title>
+       <title>NCKU WSY</title>
     </head>
 
     <body>
@@ -50,12 +191,12 @@
                                         <h1 id='signinname'>SIGN IN</h1>
                                         <div class="form-group" >
                                             <label for="user_id"></label>
-                                            <input type="text" name="" id="user_id" placeholder="account name" required>
+                                            <input type="text" name="" id="user_id" placeholder="  Account name" required>
                                         </div>
                                         <br>
                                         <div class="form-group">
                                             <label for="user_pwd"></label>
-                                            <input type="password" name="" id="user_pwd" placeholder="password" required>
+                                            <input type="password" name="" id="user_pwd" placeholder="  Password" required>
                                         </div>
 
                                         <br>
@@ -63,16 +204,14 @@
                                         <div class='btnsection'>
                                             <div class="btn-group">
                                                 <button class="btnin">L O G I N</button>
-                                            </div>
-
-                                            <div class="btn-group">
                                                 <button class="btnsignup">S I G N U P </button>
                                             </div>
+
                                         </div>
 
                                         <br>
 
-                                        <a href="#"> Forgot your password ?</a>
+                                        <a href="#" class='forget'>Forgot your password ?</a>
                                     </form>
                                 </div>
                         </div>
@@ -84,5 +223,4 @@
           
         
     </body>
-
 </html>
